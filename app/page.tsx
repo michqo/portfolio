@@ -38,16 +38,40 @@ export default function Page() {
           </a>
         </div>
 
-        <div className="mt-16 border-t border-border pt-8">
-          <div className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Tech Stack</div>
-          <div className="flex flex-wrap gap-2">
-            {["React", "TypeScript", "Next.js", "Django", "Python", "PostgreSQL", "REST APIs", "Tailwind CSS"].map((tech) => (
-              <span
-                key={tech}
-                className="border border-border bg-muted/40 px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-              >
-                {tech}
-              </span>
+        <div id="skills" className="mt-16 border-t border-border pt-8">
+          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Skills</div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {[
+              {
+                label: "Frontend",
+                items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Svelte", "SvelteKit", "Vite", "Redux Toolkit", "Redux Saga", "shadcn/ui", "SCSS", "PostCSS"],
+              },
+              {
+                label: "Backend",
+                items: ["Python", "Django", "Django REST Framework", "FastAPI", "Node.js", "Express", "Go", "Rust", "MongoDB", "Prisma", "Jest", "Mocha"],
+              },
+              {
+                label: "DevOps",
+                items: ["Docker", "Git", "GitHub Actions", "AWS", "Linux"],
+              },
+              {
+                label: "Tools",
+                items: ["GitHub", "GitLab", "VS Code", "Figma", "Vercel", "Postman", "Fly.io", "Neovim", "Hoppscotch", "Trello"],
+              },
+            ].map(({ label, items }) => (
+              <div key={label}>
+                <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">{label}</div>
+                <div className="flex flex-wrap gap-2">
+                  {items.map((item) => (
+                    <span
+                      key={item}
+                      className="border border-border bg-muted/40 px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
