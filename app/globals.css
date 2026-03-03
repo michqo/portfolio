@@ -80,6 +80,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --dot-color: oklch(0 0 0 / 0.06);
+  --bg-gradient: radial-gradient(ellipse 90% 70% at 100% 0%, oklch(0.60 0.13 163 / 0.10) 0%, transparent 60%),
+                 radial-gradient(ellipse 60% 50% at 0% 100%, oklch(0.60 0.13 163 / 0.05) 0%, transparent 55%);
 }
 
 .dark {
@@ -114,6 +117,9 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --dot-color: oklch(1 0 0 / 0.05);
+  --bg-gradient: radial-gradient(ellipse 90% 70% at 100% 0%, oklch(0.70 0.15 162 / 0.14) 0%, transparent 60%),
+                 radial-gradient(ellipse 60% 50% at 0% 100%, oklch(0.70 0.15 162 / 0.07) 0%, transparent 55%);
 }
 
 @layer base {
@@ -123,9 +129,18 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      linear-gradient(var(--border) 1px, transparent 1px),
-      linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 40px 40px;
+      radial-gradient(ellipse 80% 60% at 80% 0%, oklch(0.60 0.13 163 / 0.15) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 45% at 10% 100%, oklch(0.60 0.13 163 / 0.08) 0%, transparent 60%),
+      radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 28px 28px;
+
+    &:is(.dark *) {
+      background-image:
+        radial-gradient(ellipse 80% 60% at 80% 0%, oklch(0.70 0.15 162 / 0.20) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 45% at 10% 100%, oklch(0.70 0.15 162 / 0.12) 0%, transparent 60%),
+        radial-gradient(var(--dot-color) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 28px 28px;
+    }
   }
 }
 
