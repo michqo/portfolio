@@ -77,15 +77,15 @@ export default function Page() {
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                Developed and maintained production React features for an advertisement management dashboard, including CRUD operations, advanced filtering, and analytics views
+                Delivered production React features in a 2-person team for an advertisement management dashboard — including CRUD operations, advanced filtering, and analytics views
               </li>
               <li className="flex gap-2">
                 <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                Built REST APIs in Django and designed relational models in PostgreSQL
+                Designed and implemented 15+ Django REST API endpoints backed by a normalised PostgreSQL schema
               </li>
               <li className="flex gap-2">
                 <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                Integrated third-party APIs, optimized UI performance, and collaborated in a GitLab-based workflow
+                Integrated multiple third-party APIs, improved UI rendering performance, and maintained a GitLab CI/CD-based workflow throughout the full development lifecycle
               </li>
             </ul>
 
@@ -95,6 +95,52 @@ export default function Page() {
                   {tag}
                 </span>
               ))}
+            </div>
+          </div>
+        </div>
+
+        <div id="education" className="mt-16 border-t border-border pt-8">
+          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Education &amp; Certifications</div>
+
+          <div className="flex flex-col gap-3">
+            {/* Education */}
+            <div className="relative border border-border bg-card p-5 transition-colors hover:border-primary/50">
+              <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-1">Education</div>
+                  <h3 className="text-sm font-semibold">Secondary School of Electrical Engineering, Zochova 9</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">Intelligent Technologies · Completed with Matura exam</p>
+                </div>
+                <span className="shrink-0 border border-border px-3 py-1 text-xs text-muted-foreground h-fit">
+                  2021 – 2025
+                </span>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">Bratislava, Slovakia</p>
+            </div>
+
+            {/* Certificates */}
+            <div className="relative border border-border bg-card p-5 transition-colors hover:border-primary/50">
+              <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
+              <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">Certifications</div>
+              <div className="flex flex-col gap-3">
+                {[
+                  { title: "Electrical Technician Certificate (§ 21)", issuer: "Slovak Technical Standard", year: "2025" },
+                  { title: "Cisco CCNA 3 — Enterprise Networking, Security and Automation", issuer: "Cisco Networking Academy", year: "2024" },
+                  { title: "Cisco CCNA 2 — Switching, Routing and Wireless Essentials", issuer: "Cisco Networking Academy", year: "2023" },
+                ].map(({ title, issuer, year }) => (
+                  <div key={title} className="flex items-start justify-between gap-4">
+                    <div className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <div>
+                        <p className="text-sm">{title}</p>
+                        <p className="text-xs text-muted-foreground">{issuer}</p>
+                      </div>
+                    </div>
+                    <span className="shrink-0 border border-border px-2.5 py-0.5 text-xs text-muted-foreground">{year}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -141,7 +187,7 @@ export default function Page() {
                     Live Demo
                   </a>
                   <a
-                    href="https://github.com/michqo"
+                    href="https://github.com/michqo/ms_web"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
