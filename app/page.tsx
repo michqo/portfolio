@@ -36,6 +36,14 @@ export default function Page() {
           >
             Contact Me
           </a>
+          <a
+            href="/CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-border px-6 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+          >
+            Resume
+          </a>
         </div>
 
         <div id="skills" className="mt-16 border-t border-border pt-8">
