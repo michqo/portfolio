@@ -1,4 +1,12 @@
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Page() {
   return (
@@ -44,6 +52,133 @@ export default function Page() {
           >
             Resume
           </a>
+        </div>
+
+        <div id="experience" className="mt-16 border-t border-border pt-8">
+          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Experience</div>
+          <div className="relative border border-border bg-card p-6 transition-colors hover:border-primary/50">
+            {/* accent bar */}
+            <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
+
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <h3 className="text-base font-semibold">Frontend / Backend Developer</h3>
+                <div className="mt-1 flex items-center gap-2 text-sm text-primary">
+                  <span>Backbone</span>
+                  <span className="text-border">·</span>
+                  <span className="text-muted-foreground">Hybrid</span>
+                </div>
+              </div>
+              <span className="shrink-0 border border-border px-3 py-1 text-xs text-muted-foreground">
+                May 2023 – Oct 2024
+              </span>
+            </div>
+
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              <li className="flex gap-2">
+                <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                Developed and maintained production React features for an advertisement management dashboard, including CRUD operations, advanced filtering, and analytics views
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                Built REST APIs in Django and designed relational models in PostgreSQL
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                Integrated third-party APIs, optimized UI performance, and collaborated in a GitLab-based workflow
+              </li>
+            </ul>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              {["React", "Django", "PostgreSQL", "REST APIs", "GitLab"].map((tag) => (
+                <span key={tag} className="border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div id="projects" className="mt-16 border-t border-border pt-8">
+          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">Projects</div>
+
+          <div className="border border-border bg-card transition-colors hover:border-primary/50">
+            {/* Screenshots carousel */}
+            <Carousel className="w-full" opts={{ loop: true }}>
+              <CarouselContent>
+                {[
+                  { src: "/homepage.png",     alt: "Homepage" },
+                  { src: "/dashboard.png",    alt: "Dashboard" },
+                  { src: "/measurements.png", alt: "Measurements" },
+                  { src: "/forecast.png",     alt: "Forecast" },
+                ].map(({ src, alt }) => (
+                  <CarouselItem key={src}>
+                    <div className="relative aspect-video w-full overflow-hidden border-b border-border">
+                      <Image src={src} alt={alt} fill className="object-cover" />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-3" />
+              <CarouselNext className="right-3" />
+            </Carousel>
+
+            {/* Content */}
+            <div className="p-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 className="text-base font-semibold">Weather Station System</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">IoT · Full Stack · Hardware Integration</p>
+                </div>
+                <div className="flex shrink-0 flex-wrap gap-2">
+                  <a
+                    href="https://ms-urban.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    Live Demo
+                  </a>
+                  <a
+                    href="https://github.com/michqo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                  >
+                    <Github className="h-3.5 w-3.5" />
+                    View Source
+                  </a>
+                </div>
+              </div>
+
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                A complete IoT weather station monitoring system with a Django REST backend, SvelteKit frontend dashboard, and ESP32 hardware clients for real-time environmental data collection across multiple stations.
+              </p>
+
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                {[
+                  "Real-time monitoring with instant updates of latest weather conditions",
+                  "Interactive charts for historical data visualization using LayerChart",
+                  "Multi-day weather forecasts and station management interface",
+                  "Full i18n support and custom ESP32 hardware integration",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["SvelteKit", "Django", "ESP32", "TypeScript", "PostgreSQL", "LayerChart"].map((tag) => (
+                  <span key={tag} className="border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         <div id="skills" className="mt-16 border-t border-border pt-8">
