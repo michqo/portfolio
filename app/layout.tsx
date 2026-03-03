@@ -15,8 +15,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Michal Urban — Software Developer",
-  description: "Software developer specialising in React, TypeScript, Django and scalable full-stack applications.",
+  title: "Miqal — Software Developer",
+  description: "Software developer specialising in React, TypeScript, Django and scalable full-stack applications. Available for hire.",
+  keywords: ["software developer", "full-stack", "React", "Django", "TypeScript", "Next.js", "portfolio"],
+  authors: [{ name: "Michal Urban", url: "https://miqal.dev" }],
+  openGraph: {
+    title: "Miqal — Software Developer",
+    description: "Software developer specialising in React, TypeScript, Django and scalable full-stack applications.",
+    url: "https://miqal.dev",
+    siteName: "Miqal",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Miqal — Software Developer",
+    description: "Software developer specialising in React, TypeScript, Django and scalable full-stack applications.",
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +57,7 @@ export default function RootLayout({
           <footer className="border-t bg-background/80 backdrop-blur-sm">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 font-mono text-xs text-muted-foreground sm:px-8">
               <span>
-                <span className="text-primary">~</span> michal.urban
+                <span className="text-primary">~</span> miqal
               </span>
               <span>&copy; {new Date().getFullYear()} — all rights reserved</span>
             </div>

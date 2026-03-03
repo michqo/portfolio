@@ -10,7 +10,7 @@ export function NavBar() {
           className="flex items-center gap-2 font-bold tracking-tight transition-colors hover:text-primary"
         >
           <span className="text-primary">~</span>
-          <span>michal.urban</span>
+          <span>miqal</span>
         </Link>
 
         <nav className="flex items-center gap-6 text-muted-foreground">

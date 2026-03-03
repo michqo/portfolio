@@ -17,10 +17,10 @@ export default function Page() {
         <div className="mb-3 text-xs tracking-widest text-muted-foreground">&gt; whoami</div>
 
         <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-7xl">
-          Michal<br />
-          <span className="text-primary">Urban</span>
+          <span className="text-primary">Miqal</span>
           <span className="animate-blink ml-1 inline-block h-[0.85em] w-[3px] translate-y-[3px] bg-primary" />
         </h1>
+        <div className="mb-6 text-xs tracking-widest text-muted-foreground">Michal Urban</div>
 
         <p className="mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           Software developer with commercial experience building React frontends and Django REST APIs.
