@@ -54,10 +54,11 @@ export default function RootLayout({
           <main className="flex-1">
             {children}
           </main>
-          <footer className="border-t bg-background/80 backdrop-blur-sm">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 font-mono text-xs text-muted-foreground sm:px-8">
-              <span>
-                <span className="text-primary">~</span> miqal
+          <footer className="border-t border-border/50 bg-background/70 backdrop-blur-md">
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 font-mono text-xs text-muted-foreground sm:px-8">
+              <span className="group flex items-center gap-1 font-bold tracking-tight">
+                <span className="text-primary transition-colors group-hover:text-primary/70">/</span>
+                <span className="transition-colors group-hover:text-primary">miqal</span>
               </span>
               <span>&copy; {new Date().getFullYear()} — all rights reserved</span>
             </div>
