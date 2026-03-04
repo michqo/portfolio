@@ -16,7 +16,7 @@ export default async function Page() {
     <div className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-20 sm:px-8">
       {/* no overlay — gradient lives on <body> */}
       <div className="relative mx-auto w-full max-w-3xl font-mono">
-        <div className="mb-6 flex items-center gap-3">
+        <div className="mb-6 flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
             {t("hero.badge")}
@@ -24,19 +24,19 @@ export default async function Page() {
           <span className="text-xs text-muted-foreground">{t("hero.role")}</span>
         </div>
 
-        <h1 className="mb-1 text-5xl font-bold tracking-tight sm:text-7xl">
+        <h1 className="mb-1 text-5xl font-bold tracking-tight text-balance sm:text-7xl">
           Michal Urban
         </h1>
         <div className="mb-8 text-sm text-muted-foreground">{t("hero.subtitle")}</div>
 
-        <p className="mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="mb-10 max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
           {t("hero.description")}
         </p>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
             href="#projects"
-            className="bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="bg-primary px-6 py-2.5 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
           >
             {t("hero.viewProjects")}
           </a>
@@ -44,13 +44,13 @@ export default async function Page() {
             href="/CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-border px-6 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+            className="border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
           >
             {t("hero.downloadCV")}
           </a>
           <a
             href="#contact"
-            className="border border-border px-6 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+            className="border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
           >
             {t("hero.getInTouch")}
           </a>
@@ -140,17 +140,17 @@ export default async function Page() {
                     { titleKey: "cert3Title", issuerKey: "cert3Issuer", year: "2023" },
                   ] as const
                 ).map(({ titleKey, issuerKey, year }) => (
-                  <div key={titleKey} className="flex items-start justify-between gap-4">
-                    <div className="flex gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                      <div>
-                        <p className="text-sm">{t(`education.${titleKey}`)}</p>
-                        <p className="text-xs text-muted-foreground">{t(`education.${issuerKey}`)}</p>
+                  <div key={titleKey} className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-start justify-between gap-2">
+                        <p className="text-sm leading-snug">{t(`education.${titleKey}`)}</p>
+                        <span className="ml-1 mt-0.5 shrink-0 border border-border px-2 py-0.5 text-xs text-muted-foreground">
+                          {year}
+                        </span>
                       </div>
+                      <p className="mt-0.5 text-xs text-muted-foreground">{t(`education.${issuerKey}`)}</p>
                     </div>
-                    <span className="shrink-0 border border-border px-2.5 py-0.5 text-xs text-muted-foreground">
-                      {year}
-                    </span>
                   </div>
                 ))}
               </div>
@@ -215,7 +215,7 @@ export default async function Page() {
                 </div>
               </div>
 
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-sm leading-relaxed text-pretty text-muted-foreground">
                 {t("projects.weatherDescription")}
               </p>
 
