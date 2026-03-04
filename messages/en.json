@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Open to opportunities",
+    "role": "Full Stack Developer",
+    "subtitle": "miqal · Bratislava, Slovakia",
+    "description": "Full Stack Developer with commercial experience delivering React frontends and Django REST APIs in production. Passionate about backend architecture, relational databases, and building reliable, data-driven applications.",
+    "viewProjects": "View Projects",
+    "downloadCV": "Download CV",
+    "getInTouch": "Get in Touch"
+  },
+  "experience": {
+    "sectionTitle": "Experience",
+    "jobTitle": "Frontend / Backend Developer",
+    "company": "Backbone",
+    "workType": "Hybrid",
+    "period": "May 2023 – Oct 2024",
+    "bullet1": "Delivered production React features in a 2-person team for an advertisement management dashboard — including CRUD operations, advanced filtering, and analytics views",
+    "bullet2": "Designed and implemented 15+ Django REST API endpoints backed by a normalised PostgreSQL schema",
+    "bullet3": "Integrated multiple third-party APIs, improved UI rendering performance, and maintained a GitLab CI/CD-based workflow throughout the full development lifecycle"
+  },
+  "education": {
+    "sectionTitle": "Education & Certifications",
+    "educationLabel": "Education",
+    "schoolName": "Secondary School of Electrical Engineering, Zochova 9",
+    "schoolDescription": "Intelligent Technologies · Completed with Matura exam",
+    "schoolPeriod": "2021 – 2025",
+    "schoolLocation": "Bratislava, Slovakia",
+    "certificationsLabel": "Certifications",
+    "cert1Title": "Electrical Technician Certificate (§ 21)",
+    "cert1Issuer": "Slovak Technical Standard",
+    "cert2Title": "Cisco CCNA 3 — Enterprise Networking, Security and Automation",
+    "cert2Issuer": "Cisco Networking Academy",
+    "cert3Title": "Cisco CCNA 2 — Switching, Routing and Wireless Essentials",
+    "cert3Issuer": "Cisco Networking Academy"
+  },
+  "projects": {
+    "sectionTitle": "Projects",
+    "weatherTitle": "Weather Station System",
+    "weatherSubtitle": "IoT · Full Stack · Hardware Integration",
+    "liveDemo": "Live Demo",
+    "viewSource": "View Source",
+    "weatherDescription": "A complete IoT weather station monitoring system with a Django REST backend, SvelteKit frontend dashboard, and ESP32 hardware clients for real-time environmental data collection across multiple stations.",
+    "weatherBullet1": "Real-time monitoring with instant updates of latest weather conditions",
+    "weatherBullet2": "Interactive charts for historical data visualization using LayerChart",
+    "weatherBullet3": "Multi-day weather forecasts and station management interface",
+    "weatherBullet4": "Full i18n support and custom ESP32 hardware integration"
+  },
+  "skills": {
+    "sectionTitle": "Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps",
+    "tools": "Tools"
+  },
+  "contact": {
+    "sectionTitle": "Contact",
+    "locationLabel": "Location",
+    "location": "Bratislava, Slovakia"
+  },
+  "footer": {
+    "rights": "all rights reserved"
+  },
+  "localeSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "enDescription": "Switch to English",
+    "sk": "Slovak",
+    "skDescription": "Prepnúť na slovenčinu"
+  }
+}

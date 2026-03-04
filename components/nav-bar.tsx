@@ -1,20 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-
-const navLinks = [
-  { href: "#experience", label: "Experience" },
-  { href: "#education",  label: "Education" },
-  { href: "#projects",   label: "Projects" },
-  { href: "#skills",     label: "Skills" },
-  { href: "#contact",    label: "Contact" },
-];
+import { LocaleSwitcher } from "@/components/ui/locale-switcher";
 
 export function NavBar() {
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#experience", label: t("experience") },
+    { href: "#education", label: t("education") },
+    { href: "#projects", label: t("projects") },
+    { href: "#skills", label: t("skills") },
+    { href: "#contact", label: t("contact") },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/70 backdrop-blur-md">
@@ -41,6 +44,7 @@ export function NavBar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <LocaleSwitcher />
           <ThemeToggle />
           {/* Hamburger — mobile only */}
           <button

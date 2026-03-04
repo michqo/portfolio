@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "experience": "Skúsenosti",
+    "education": "Vzdelanie",
+    "projects": "Projekty",
+    "skills": "Zručnosti",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Otvorený pracovným príležitostiam",
+    "role": "Full Stack Developer",
+    "subtitle": "miqal · Bratislava, Slovensko",
+    "description": "Full Stack developer s komerčnými skúsenosťami v dodávaní React aplikácií a Django REST API do produkcie. Baví ma backendová architektúra, relačné databázy a tvorba spoľahlivých riešení postavených na dátach.",
+    "viewProjects": "Zobraziť projekty",
+    "downloadCV": "Stiahnuť životopis",
+    "getInTouch": "Kontaktujte ma"
+  },
+  "experience": {
+    "sectionTitle": "Skúsenosti",
+    "jobTitle": "Frontend / Backend Developer",
+    "company": "Backbone",
+    "workType": "Hybridná práca",
+    "period": "Máj 2023 – Okt 2024",
+    "bullet1": "Dodal produkčné React funkcie v 2-člennom tíme pre dashboard správy reklám — vrátane CRUD operácií, pokročilého filtrovania a analytických prehľadov",
+    "bullet2": "Navrhol a implementoval 15+ Django REST API endpointov s normalizovanou PostgreSQL schémou",
+    "bullet3": "Integroval viaceré API tretích strán, optimalizoval výkon renderingu a spravoval vývojový proces postavený na GitLab CI/CD"
+  },
+  "education": {
+    "sectionTitle": "Vzdelanie a certifikácie",
+    "educationLabel": "Vzdelanie",
+    "schoolName": "Stredná odborná škola elektrotechnická, Zochova 9",
+    "schoolDescription": "Inteligentné technológie · Absolvované s maturitnou skúškou",
+    "schoolPeriod": "2021 – 2025",
+    "schoolLocation": "Bratislava, Slovensko",
+    "certificationsLabel": "Certifikácie",
+    "cert1Title": "Osvedčenie elektrotechnika (§ 21)",
+    "cert1Issuer": "Slovenská technická norma",
+    "cert2Title": "Cisco CCNA 3 — Podnikové siete, bezpečnosť a automatizácia",
+    "cert2Issuer": "Cisco Networking Academy",
+    "cert3Title": "Cisco CCNA 2 — Prepínanie, smerovanie a bezdrôtové siete",
+    "cert3Issuer": "Cisco Networking Academy"
+  },
+  "projects": {
+    "sectionTitle": "Projekty",
+    "weatherTitle": "Systém meteorologických staníc",
+    "weatherSubtitle": "IoT · Full Stack · Integrácia hardvéru",
+    "liveDemo": "Živá ukážka",
+    "viewSource": "Zobraziť zdrojový kód",
+    "weatherDescription": "Kompletný IoT systém na sledovanie meteorologických staníc — s Django REST backendom, SvelteKit dashboardom a ESP32 klientmi zbierajúcimi dáta o počasí v reálnom čase z viacerých staníc.",
+    "weatherBullet1": "Sledovanie počasia v reálnom čase s okamžitou aktualizáciou nameraných hodnôt",
+    "weatherBullet2": "Interaktívne grafy pre vizualizáciu historických dát pomocou LayerChart",
+    "weatherBullet3": "Viacdňové predpovede počasia a rozhranie správy staníc",
+    "weatherBullet4": "Plná podpora i18n a integrácia vlastného ESP32 hardvéru"
+  },
+  "skills": {
+    "sectionTitle": "Zručnosti",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps",
+    "tools": "Nástroje"
+  },
+  "contact": {
+    "sectionTitle": "Kontakt",
+    "locationLabel": "Lokalita",
+    "location": "Bratislava, Slovensko"
+  },
+  "footer": {
+    "rights": "všetky práva vyhradené"
+  },
+  "localeSwitcher": {
+    "label": "Jazyk",
+    "en": "Angličtina",
+    "enDescription": "Switch to English",
+    "sk": "Slovenčina",
+    "skDescription": "Prepnúť na slovenčinu"
+  }
+}
