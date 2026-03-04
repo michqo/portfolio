@@ -14,21 +14,21 @@ export default function Page() {
       {/* no overlay — gradient lives on <body> */}
       <div className="relative mx-auto w-full max-w-3xl font-mono">
         <div className="mb-6 flex items-center gap-3">
-          <span className="inline-flex items-center gap-2 border border-primary/40 bg-primary/10 px-3 py-1 text-xs text-primary">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-            available for hire
+          <span className="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
+            Open to opportunities
           </span>
           <span className="text-xs text-muted-foreground">Full Stack Developer</span>
         </div>
 
-        <h1 className="mb-2 text-5xl font-bold tracking-tight sm:text-7xl">
-          <span className="text-primary">Miqal</span>
+        <h1 className="mb-1 text-5xl font-bold tracking-tight sm:text-7xl">
+          Michal Urban
         </h1>
-        <div className="mb-8 text-sm text-muted-foreground">Michal Urban</div>
+        <div className="mb-8 text-sm text-muted-foreground">miqal · Bratislava, Slovakia</div>
 
         <p className="mb-10 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Software developer with commercial experience building React frontends and Django REST APIs.
-          Focused on backend systems, relational databases, and scalable data-driven applications.
+          Full Stack Developer with commercial experience delivering React frontends and Django REST APIs in production.
+          Passionate about backend architecture, relational databases, and building reliable, data-driven applications.
         </p>
 
         <div className="flex flex-wrap gap-3">
@@ -39,18 +39,18 @@ export default function Page() {
             View Projects
           </a>
           <a
-            href="#contact"
-            className="border border-border px-6 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
-          >
-            Contact Me
-          </a>
-          <a
             href="/CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-border px-6 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
           >
-            Resume
+            Download CV
+          </a>
+          <a
+            href="#contact"
+            className="border border-border px-6 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+          >
+            Get in Touch
           </a>
         </div>
 
