@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, Languages } from "lucide-react";
+import { Languages } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -12,8 +12,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -39,53 +37,30 @@ export function LocaleSwitcher() {
           <Languages className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="font-mono w-48">
-        <div className="mb-2 px-3 py-2">
-          <div className="mb-1 flex items-center gap-2 text-muted-foreground">
-            <Languages className="h-4 w-4" />
-            <DropdownMenuLabel className="p-0 text-sm font-semibold text-foreground">
-              {t("label")}
-            </DropdownMenuLabel>
-          </div>
-        </div>
+      <DropdownMenuContent align="end" className="w-36 font-mono p-1">
+        {routing.locales.map((l) => {
+          const isActive = l === locale;
+          const { flag } = localeLabels[l] ?? { short: l.toUpperCase(), flag: "" };
 
-        <DropdownMenuSeparator />
-
-        <div className="flex flex-col gap-1 p-1">
-          {routing.locales.map((l) => {
-            const isActive = l === locale;
-            const { short, flag } = localeLabels[l] ?? { short: l.toUpperCase(), flag: "" };
-
-            return (
-              <DropdownMenuItem
-                key={l}
-                onClick={() => switchLocale(l)}
-                className={cn(
-                  "group flex cursor-pointer items-center gap-3 rounded-sm p-3 transition-colors",
-                  isActive
-                    ? "bg-accent/80 text-accent-foreground"
-                    : "hover:bg-accent/50 text-muted-foreground",
-                )}
-              >
-                <span className="text-base leading-none">{flag}</span>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={cn(
-                        "text-sm font-medium transition-colors",
-                        isActive ? "text-foreground" : "",
-                      )}
-                    >
-                      {t(l as "en" | "sk")}
-                    </span>
-                    {isActive && <Check className="h-4 w-4 text-primary" />}
-                  </div>
-                  <p className="mt-0.5 text-xs text-muted-foreground">{short}</p>
-                </div>
-              </DropdownMenuItem>
-            );
-          })}
-        </div>
+          return (
+            <DropdownMenuItem
+              key={l}
+              onClick={() => switchLocale(l)}
+              className={cn(
+                "relative cursor-pointer px-3 py-3 text-xs transition-colors",
+                isActive
+                  ? "bg-primary/5 text-primary"
+                  : "text-muted-foreground hover:bg-muted/40 hover:text-foreground",
+              )}
+            >
+              {isActive && (
+                <span className="absolute left-0 top-1/2 h-3 w-px -translate-y-1/2 bg-primary" />
+              )}
+              <span className="text-sm leading-none">{flag}</span>
+              {t(l as "en" | "sk")}
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );

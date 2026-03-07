@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Palette, Sun, SunMoon, Check } from "lucide-react";
+import { Moon, Sun, SunMoon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
@@ -10,103 +10,48 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-function ThemeOption({ 
-  id, 
-  label, 
-  description, 
-  isActive 
-}: { 
-  id: string; 
-  label: string; 
-  description: string; 
-  isActive: boolean;
-}) {
-  const { setTheme } = useTheme();
-  
-  return (
-    <DropdownMenuItem
-      onClick={() => setTheme(id)}
-      className={cn(
-        "group flex cursor-pointer items-center gap-3 rounded-sm p-3 transition-colors",
-        isActive 
-          ? "bg-accent/80 text-accent-foreground"
-          : "hover:bg-accent/50 text-muted-foreground"
-      )}
-    >
-      <div className={cn("p-1", isActive ? "text-primary" : "text-muted-foreground group-hover:text-primary")}>
-        {id === "dark" ? (
-          <Moon className="h-4 w-4 text-inherit" />
-        ) : id === "light" ? (
-          <Sun className="h-4 w-4 text-inherit" />
-        ) : (
-          <SunMoon className="h-4 w-4 text-inherit" />
-        )}
-      </div>
-
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center justify-between">
-          <span className={cn("text-sm font-medium transition-colors", isActive ? "text-foreground" : "")}>
-            {label}
-          </span>
-          {isActive && <Check className="h-4 w-4 text-primary" />}
-        </div>
-        <p className="mt-0.5 text-xs text-muted-foreground">
-          {description}
-        </p>
-      </div>
-    </DropdownMenuItem>
-  );
-}
+const themes = [
+  { id: "light", label: "Light", Icon: Sun },
+  { id: "dark", label: "Dark", Icon: Moon },
+  { id: "system", label: "System", Icon: SunMoon },
+] as const;
 
 export function ThemeToggle() {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size="icon" aria-label="Toggle theme">
           <Sun className="h-4 w-4 scale-100 transition-all duration-500 ease-out dark:scale-0" />
           <Moon className="absolute h-4 w-4 scale-0 transition-all duration-500 ease-out dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="font-mono w-56">
-        <div className="mb-2 px-3 py-2">
-          <div className="mb-1 flex items-center gap-2 text-muted-foreground">
-            <Palette className="h-4 w-4" />
-            <DropdownMenuLabel className="p-0 text-sm font-semibold text-foreground">
-              Theme
-            </DropdownMenuLabel>
-          </div>
-        </div>
-
-        <DropdownMenuSeparator />
-        
-        <div className="flex flex-col gap-1 p-1">
-          <ThemeOption
-            id="light"
-            label="Light"
-            description="Clear and readable"
-            isActive={theme === "light"}
-          />
-          <ThemeOption
-            id="dark"
-            label="Dark"
-            description="Easy on the eyes"
-            isActive={theme === "dark"}
-          />
-          <ThemeOption
-            id="system"
-            label="System"
-            description="Adapts to your device"
-            isActive={theme === "system"}
-          />
-        </div>
+      <DropdownMenuContent align="end" className="w-36 font-mono p-1">
+        {themes.map(({ id, label, Icon }) => {
+          const isActive = theme === id;
+          return (
+            <DropdownMenuItem
+              key={id}
+              onClick={() => setTheme(id)}
+              className={cn(
+                "relative cursor-pointer px-3 py-3 text-xs transition-colors",
+                isActive
+                  ? "bg-primary/5 text-primary"
+                  : "text-muted-foreground hover:bg-muted/40 hover:text-foreground",
+              )}
+            >
+              {isActive && (
+                <span className="absolute left-0 top-1/2 h-3 w-px -translate-y-1/2 bg-primary" />
+              )}
+              <Icon className="h-3.5 w-3.5 shrink-0" />
+              {label}
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );
