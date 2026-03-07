@@ -56,9 +56,11 @@ export default async function Page() {
           </a>
         </div>
 
-        <div id="experience" className="mt-16 border-t border-border pt-8">
-          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            {t("experience.sectionTitle")}
+        <div id="experience" className="mt-20 pt-8">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-xs font-bold text-primary/50">01</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("experience.sectionTitle")}</span>
+            <div className="h-px flex-1 bg-border" />
           </div>
           <div className="relative border border-border bg-card p-6 transition-colors hover:border-primary/50">
             {/* accent bar */}
@@ -100,14 +102,16 @@ export default async function Page() {
           </div>
         </div>
 
-        <div id="education" className="mt-16 border-t border-border pt-8">
-          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            {t("education.sectionTitle")}
+        <div id="education" className="mt-20 pt-8">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-xs font-bold text-primary/50">02</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("education.sectionTitle")}</span>
+            <div className="h-px flex-1 bg-border" />
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             {/* Education */}
-            <div className="relative border border-border bg-card p-5 transition-colors hover:border-primary/50">
+            <div className="relative border border-border bg-card p-6 transition-colors hover:border-primary/50">
               <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
@@ -127,7 +131,7 @@ export default async function Page() {
             </div>
 
             {/* Certificates */}
-            <div className="relative border border-border bg-card p-5 transition-colors hover:border-primary/50">
+            <div className="relative border border-border bg-card p-6 transition-colors hover:border-primary/50">
               <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
               <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
                 {t("education.certificationsLabel")}
@@ -158,9 +162,11 @@ export default async function Page() {
           </div>
         </div>
 
-        <div id="projects" className="mt-16 border-t border-border pt-8">
-          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            {t("projects.sectionTitle")}
+        <div id="projects" className="mt-20 pt-8">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-xs font-bold text-primary/50">03</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("projects.sectionTitle")}</span>
+            <div className="h-px flex-1 bg-border" />
           </div>
 
           <div className="border border-border bg-card transition-colors hover:border-primary/50">
@@ -195,7 +201,7 @@ export default async function Page() {
                 </div>
                 <div className="flex shrink-0 flex-wrap gap-2">
                   <a
-                    href="https://ms-urban.vercel.app"
+                    href="https://ms.miqal.xyz"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
@@ -251,9 +257,11 @@ export default async function Page() {
           </div>
         </div>
 
-        <div id="skills" className="mt-16 border-t border-border pt-8">
-          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            {t("skills.sectionTitle")}
+        <div id="skills" className="mt-16 pt-8">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-xs font-bold text-primary/50">04</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("skills.sectionTitle")}</span>
+            <div className="h-px flex-1 bg-border" />
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {(
@@ -332,16 +340,18 @@ export default async function Page() {
           </div>
         </div>
 
-        <div id="contact" className="mt-16 border-t border-border pt-8">
-          <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            {t("contact.sectionTitle")}
+        <div id="contact" className="mt-20 pt-8">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-xs font-bold text-primary/50">05</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("contact.sectionTitle")}</span>
+            <div className="h-px flex-1 bg-border" />
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <a
               href="https://github.com/michqo"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 border border-border p-4 transition-colors hover:border-primary"
+              className="group flex items-center gap-3 border border-border p-5 transition-colors hover:border-primary"
             >
               <Github className="h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
               <div className="min-w-0">
@@ -355,7 +365,7 @@ export default async function Page() {
               href="https://www.linkedin.com/in/michal-urban-0a763a324/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 border border-border p-4 transition-colors hover:border-primary"
+              className="group flex items-center gap-3 border border-border p-5 transition-colors hover:border-primary"
             >
               <Linkedin className="h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
               <div className="min-w-0">
@@ -367,7 +377,7 @@ export default async function Page() {
             </a>
             <a
               href="mailto:michal.urban724@gmail.com"
-              className="group flex items-center gap-3 border border-border p-4 transition-colors hover:border-primary"
+              className="group flex items-center gap-3 border border-border p-5 transition-colors hover:border-primary"
             >
               <Mail className="h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
               <div className="min-w-0">
@@ -377,7 +387,7 @@ export default async function Page() {
                 </div>
               </div>
             </a>
-            <div className="flex items-center gap-3 border border-border p-4">
+            <div className="flex items-center gap-3 border border-border p-5">
               <MapPin className="h-4 w-4 shrink-0 text-muted-foreground" />
               <div>
                 <div className="text-xs text-muted-foreground">{t("contact.locationLabel")}</div>
