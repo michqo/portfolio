@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { getTranslations } from "next-intl/server";
+import { FadeIn, FadeInView } from "@/components/motion";
 
 export default async function Page() {
   const t = await getTranslations();
@@ -16,23 +17,28 @@ export default async function Page() {
     <div className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-20 sm:px-8">
       {/* no overlay — gradient lives on <body> */}
       <div className="relative mx-auto w-full max-w-3xl font-mono">
-        <div className="mb-6 flex flex-wrap items-center gap-3">
+        <FadeIn delay={0} className="mb-6 flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
             {t("hero.badge")}
           </span>
           <span className="text-xs text-muted-foreground">{t("hero.role")}</span>
-        </div>
+        </FadeIn>
 
-        <h1 className="mb-1 text-5xl font-bold tracking-tight text-balance sm:text-7xl">
-          Michal Urban
-        </h1>
-        <div className="mb-8 text-sm text-muted-foreground">{t("hero.subtitle")}</div>
+        <FadeIn delay={0.1}>
+          <h1 className="mb-1 text-5xl font-bold tracking-tight text-balance sm:text-7xl">
+            Michal Urban
+          </h1>
+          <div className="mb-8 text-sm text-muted-foreground">{t("hero.subtitle")}</div>
+        </FadeIn>
 
-        <p className="mb-10 max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
-          {t("hero.description")}
-        </p>
+        <FadeIn delay={0.2}>
+          <p className="mb-10 max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
+            {t("hero.description")}
+          </p>
+        </FadeIn>
 
+        <FadeIn delay={0.3}>
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
             href="#projects"
@@ -55,8 +61,10 @@ export default async function Page() {
             {t("hero.getInTouch")}
           </a>
         </div>
+        </FadeIn>
 
         <div id="experience" className="mt-20 pt-8">
+          <FadeInView>
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">01</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("experience.sectionTitle")}</span>
@@ -99,10 +107,10 @@ export default async function Page() {
                 </span>
               ))}
             </div>
-          </div>
-        </div>
+          </div>          </FadeInView>        </div>
 
         <div id="education" className="mt-20 pt-8">
+          <FadeInView>
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">02</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("education.sectionTitle")}</span>
@@ -160,9 +168,11 @@ export default async function Page() {
               </div>
             </div>
           </div>
+          </FadeInView>
         </div>
 
         <div id="projects" className="mt-20 pt-8">
+          <FadeInView>
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">03</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("projects.sectionTitle")}</span>
@@ -255,9 +265,11 @@ export default async function Page() {
               </div>
             </div>
           </div>
+          </FadeInView>
         </div>
 
         <div id="skills" className="mt-16 pt-8">
+          <FadeInView>
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">04</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("skills.sectionTitle")}</span>
@@ -338,9 +350,11 @@ export default async function Page() {
               </div>
             ))}
           </div>
+          </FadeInView>
         </div>
 
         <div id="contact" className="mt-20 pt-8">
+          <FadeInView>
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">05</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("contact.sectionTitle")}</span>
@@ -395,6 +409,7 @@ export default async function Page() {
               </div>
             </div>
           </div>
+          </FadeInView>
         </div>
       </div>
     </div>

@@ -7,6 +7,9 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
+
+const NAV_OFFSET = 80; // px below the navbar top where we start attributing scroll to a section
 
 export function NavBar() {
   const t = useTranslations("nav");
@@ -23,48 +26,42 @@ export function NavBar() {
 
   useEffect(() => {
     const sectionIds = navLinks.map((l) => l.href.slice(1));
-    const lastId = sectionIds[sectionIds.length - 1];
-    const visible = new Set<string>();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            visible.add(entry.target.id);
-          } else {
-            visible.delete(entry.target.id);
-          }
-        });
-        const active = sectionIds.find((id) => visible.has(id));
-        setActiveSection(active ?? "");
-      },
-      { threshold: 0.15, rootMargin: "-64px 0px -35% 0px" },
-    );
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    const handleScroll = () => {
-      const scrollBottom = window.scrollY + window.innerHeight;
+    const update = () => {
+      const scrollY = window.scrollY;
+      const scrollBottom = scrollY + window.innerHeight;
       const docHeight = document.documentElement.scrollHeight;
+
+      // Snap to last section when near the page bottom
       if (docHeight - scrollBottom < 50) {
-        setActiveSection(lastId);
+        setActiveSection(sectionIds[sectionIds.length - 1]);
+        return;
       }
+
+      // Walk sections in reverse — pick the last one whose top is above the offset
+      let current = "";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top + scrollY <= scrollY + NAV_OFFSET) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
-    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/70 backdrop-blur-md">
+    <motion.header
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+      className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/70 backdrop-blur-md"
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 font-mono text-sm sm:px-8">
         <Link
           href="/"
@@ -83,14 +80,18 @@ export function NavBar() {
                 key={href}
                 href={href}
                 className={cn(
-                  "relative border px-3 py-1.5 text-xs transition-all duration-200",
+                  "relative border px-3 py-1.5 text-xs transition-colors duration-200",
                   isActive
                     ? "border-primary/30 bg-primary/5 text-primary"
                     : "border-transparent text-muted-foreground hover:border-border hover:bg-muted/40 hover:text-foreground",
                 )}
               >
                 {isActive && (
-                  <span className="absolute left-0 top-1/2 h-3 w-px -translate-y-1/2 bg-primary" />
+                  <motion.span
+                    layoutId="nav-indicator"
+                    className="absolute left-0 top-1/2 h-3 w-px -translate-y-1/2 bg-primary"
+                    transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                  />
                 )}
                 {label}
               </Link>
@@ -107,40 +108,59 @@ export function NavBar() {
             className="border border-border p-1.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary sm:hidden"
             aria-label="Toggle menu"
           >
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={open ? "close" : "open"}
+                initial={{ opacity: 0, rotate: -45 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 45 }}
+                transition={{ duration: 0.15 }}
+                className="flex"
+              >
+                {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+              </motion.span>
+            </AnimatePresence>
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <nav className="border-t border-border/50 bg-background/95 px-4 py-2 font-mono sm:hidden">
-          {navLinks.map(({ href, label }) => {
-            const isActive = activeSection === href.slice(1);
-            return (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "flex w-full items-center gap-2 border-b border-border/30 py-3 text-sm transition-colors last:border-0",
-                  isActive ? "text-primary" : "text-muted-foreground hover:text-primary",
-                )}
-              >
-                <span
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+            className="overflow-hidden border-t border-border/50 bg-background/95 px-4 py-2 font-mono sm:hidden"
+          >
+            {navLinks.map(({ href, label }) => {
+              const isActive = activeSection === href.slice(1);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={() => setOpen(false)}
                   className={cn(
-                    "transition-colors",
-                    isActive ? "text-primary" : "text-primary/40",
+                    "flex w-full items-center gap-2 border-b border-border/30 py-3 text-sm transition-colors last:border-0",
+                    isActive ? "text-primary" : "text-muted-foreground hover:text-primary",
                   )}
                 >
-                  ›
-                </span>
-                {label}
-              </Link>
-            );
-          })}
-        </nav>
-      )}
-    </header>
+                  <span
+                    className={cn(
+                      "transition-colors",
+                      isActive ? "text-primary" : "text-primary/40",
+                    )}
+                  >
+                    ›
+                  </span>
+                  {label}
+                </Link>
+              );
+            })}
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }
