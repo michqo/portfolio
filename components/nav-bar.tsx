@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Menu, X } from "lucide-react";
+import { Github, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button, buttonVariants } from "./ui/button";
 
 const NAV_OFFSET = 80; // px below the navbar top where we start attributing scroll to a section
 
@@ -99,13 +100,25 @@ export function NavBar() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-stretch gap-2">
+          <a
+            href="https://github.com/michqo/portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ variant: "outline", size: "icon" })}
+            aria-label="View portfolio source on GitHub"
+          >
+            <Github className="h-4 w-4" />
+          </a>
           <LocaleSwitcher />
           <ThemeToggle />
           {/* Hamburger — mobile only */}
-          <button
+          
+          <Button
             onClick={() => setOpen((o) => !o)}
-            className="border border-border p-1.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary sm:hidden"
+            variant="outline"
+            className="sm:hidden"
+            size="icon"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -120,7 +133,7 @@ export function NavBar() {
                 {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </motion.span>
             </AnimatePresence>
-          </button>
+          </Button>
         </div>
       </div>
 
