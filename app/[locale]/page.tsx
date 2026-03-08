@@ -41,7 +41,7 @@ export default async function Page() {
             {t("hero.viewProjects")}
           </a>
           <a
-            href="/CV.pdf"
+            href="/Michal_Urban_Fullstack_Developer.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
