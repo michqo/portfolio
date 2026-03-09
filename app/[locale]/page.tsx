@@ -7,11 +7,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { FadeIn, FadeInView } from "@/components/motion";
 
 export default async function Page() {
   const t = await getTranslations();
+  const locale = await getLocale();
+  const cvFile = `/Michal_Urban_Fullstack_Developer_${locale.toUpperCase()}.pdf`;
 
   return (
     <div className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-20 sm:px-8">
@@ -47,7 +49,7 @@ export default async function Page() {
             {t("hero.viewProjects")}
           </a>
           <a
-            href="/Michal_Urban_Fullstack_Developer.pdf"
+            href={cvFile}
             target="_blank"
             rel="noopener noreferrer"
             className="border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
