@@ -57,7 +57,8 @@
     "frontend": "Frontend",
     "backend": "Backend",
     "devops": "DevOps",
-    "tools": "Tools"
+    "tools": "Tools",
+    "technologies": "technologies"
   },
   "contact": {
     "sectionTitle": "Contact",

@@ -338,7 +338,7 @@ export default async function Page() {
                 <div className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary">
                   {t(`skills.${labelKey}`)}
                 </div>
-                <div className="mb-6 text-xs text-muted-foreground">{items.length} technologies</div>
+                <div className="mb-6 text-xs text-muted-foreground">{items.length} {t(`skills.technologies`)}</div>
                 <div className="flex flex-wrap gap-2">
                   {items.map((item) => (
                     <span
