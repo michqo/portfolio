@@ -27,6 +27,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
 
   return {
+    metadataBase: new URL("https://miqal.xyz"),
     title: "Miqal — Software Developer",
     description: t("hero.description"),
     keywords: [
@@ -37,12 +38,23 @@ export async function generateMetadata({
       "TypeScript",
       "Next.js",
       "portfolio",
+      "Michal Urban",
+      "Bratislava",
     ],
-    authors: [{ name: "Michal Urban", url: "https://miqal.dev" }],
+    authors: [{ name: "Michal Urban", url: "https://miqal.xyz" }],
+    creator: "Michal Urban",
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
     openGraph: {
       title: "Miqal — Software Developer",
       description: t("hero.description"),
-      url: "https://miqal.dev",
+      url: "https://miqal.xyz",
       siteName: "Miqal",
       locale: locale === "sk" ? "sk_SK" : "en_US",
       type: "website",
