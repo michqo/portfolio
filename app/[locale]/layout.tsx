@@ -58,11 +58,20 @@ export async function generateMetadata({
       siteName: "Miqal",
       locale: locale === "sk" ? "sk_SK" : "en_US",
       type: "website",
+      images: [
+        {
+          url: "/og-preview.png",
+          width: 800,
+          height: 400,
+          alt: "Miqal — Software Developer Portfolio",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: "Miqal — Software Developer",
       description: t("hero.description"),
+      images: ["/og-preview.png"],
     },
   };
 }
