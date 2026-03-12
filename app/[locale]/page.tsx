@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { getTranslations, getLocale } from "next-intl/server";
 import { FadeIn, FadeInView } from "@/components/motion";
+import { CVDownloadLink } from "@/components/cv-download-link";
 
 export default async function Page() {
   const t = await getTranslations();
@@ -17,7 +18,6 @@ export default async function Page() {
 
   return (
     <div className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-20 sm:px-8">
-      {/* no overlay — gradient lives on <body> */}
       <div className="relative mx-auto w-full max-w-3xl font-mono">
         <FadeIn delay={0} className="mb-6 flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary">
@@ -48,14 +48,7 @@ export default async function Page() {
           >
             {t("hero.viewProjects")}
           </a>
-          <a
-            href={cvFile}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
-          >
-            {t("hero.downloadCV")}
-          </a>
+          <CVDownloadLink href={cvFile} label={t("hero.downloadCV")} locale={locale} />
           <a
             href="#contact"
             className="border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
