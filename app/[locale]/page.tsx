@@ -84,7 +84,7 @@ export default async function Page() {
             </div>
 
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              {(["bullet1", "bullet2", "bullet3"] as const).map((key) => (
+              {(["bullet1", "bullet2", "bullet3", "bullet4", "bullet5"] as const).map((key) => (
                 <li key={key} className="flex gap-2">
                   <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
                   {t(`experience.${key}`)}

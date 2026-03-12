@@ -9,7 +9,7 @@
   "hero": {
     "badge": "Otvorený pracovným príležitostiam",
     "role": "Full Stack Developer",
-    "subtitle": "miqal · Bratislava, Slovensko",
+    "subtitle": "Bratislava, Slovensko",
     "description": "Full Stack developer s komerčnými skúsenosťami v dodávaní React aplikácií a Django REST API do produkcie. Baví ma backendová architektúra, relačné databázy a tvorba spoľahlivých riešení postavených na dátach.",
     "viewProjects": "Zobraziť projekty",
     "downloadCV": "Stiahnuť životopis",
@@ -21,9 +21,11 @@
     "company": "Backbone",
     "workType": "Hybridná práca",
     "period": "Máj 2023 – Okt 2024",
-    "bullet1": "Dodal produkčné React funkcie v 2-člennom tíme pre dashboard správy reklám — vrátane CRUD operácií, pokročilého filtrovania a analytických prehľadov",
-    "bullet2": "Navrhol a implementoval 15+ Django REST API endpointov s normalizovanou PostgreSQL schémou",
-    "bullet3": "Integroval viaceré API tretích strán, optimalizoval výkon renderingu a spravoval vývojový proces postavený na GitLab CI/CD"
+    "bullet1": "Vyvíjal React funkcie pre dashboard správy reklám — dynamické filtrovanie, CRUD operácie a analytické prehľady — ako súčasť 2-členného frontend tímu",
+    "bullet2": "Vytvoril aplikáciu na správu grantov od základu pomocou React a vlastného Django API, čím zautomatizoval sledovanie a schvaľovanie žiadostí",
+    "bullet3": "Navrhol a implementoval škálovateľné Django REST endpointy s normalizovanými PostgreSQL schémami pre dátovo náročné interné nástroje",
+    "bullet4": "Integroval API tretích strán a zlepšil výkon UI, znížením zbytočných prerendrovania a zlepšením vnímanej odozvy",
+    "bullet5": "Pravidelne dodával v prostredí GitLab CI/CD a agilného vývoja pri zachovaní vysokej kvality kódu počas celého vývojového cyklu"
   },
   "education": {
     "sectionTitle": "Vzdelanie a certifikácie",
@@ -47,10 +49,10 @@
     "liveDemo": "Živá ukážka",
     "viewSource": "Zobraziť zdrojový kód",
     "weatherDescription": "Kompletný IoT systém na sledovanie meteorologických staníc — s Django REST backendom, SvelteKit dashboardom a ESP32 klientmi zbierajúcimi dáta o počasí v reálnom čase z viacerých staníc.",
-    "weatherBullet1": "Sledovanie počasia v reálnom čase s okamžitou aktualizáciou nameraných hodnôt",
-    "weatherBullet2": "Interaktívne grafy pre vizualizáciu historických dát pomocou LayerChart",
-    "weatherBullet3": "Viacdňové predpovede počasia a rozhranie správy staníc",
-    "weatherBullet4": "Plná podpora i18n a integrácia vlastného ESP32 hardvéru"
+    "weatherBullet1": "Vytvoril komplexný IoT systém od hardvéru ESP32 + DHT senzorov cez Django REST backend až po SvelteKit dashboard",
+    "weatherBullet2": "Zabezpečil API pomocou JWT autentifikácie a namodeloval logy senzorov v štruktúrovanej PostgreSQL schéme pre efektívne dopytovanie",
+    "weatherBullet3": "Implementoval serverové agregačné dotazy na spracovanie surových časových radov do historických trendov a analytiky",
+    "weatherBullet4": "Vytvoril responzívny dashboard s interaktívnymi vizualizáciami dát, správou staníc a plnou podporou i18n"
   },
   "skills": {
     "sectionTitle": "Zručnosti",

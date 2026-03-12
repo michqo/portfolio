@@ -9,7 +9,7 @@
   "hero": {
     "badge": "Open to opportunities",
     "role": "Full Stack Developer",
-    "subtitle": "miqal · Bratislava, Slovakia",
+    "subtitle": "Bratislava, Slovakia",
     "description": "Full Stack Developer with commercial experience delivering React frontends and Django REST APIs in production. Passionate about backend architecture, relational databases, and building reliable, data-driven applications.",
     "viewProjects": "View Projects",
     "downloadCV": "Download CV",
@@ -21,9 +21,11 @@
     "company": "Backbone",
     "workType": "Hybrid",
     "period": "May 2023 – Oct 2024",
-    "bullet1": "Delivered production React features in a 2-person team for an advertisement management dashboard — including CRUD operations, advanced filtering, and analytics views",
-    "bullet2": "Designed and implemented 15+ Django REST API endpoints backed by a normalised PostgreSQL schema",
-    "bullet3": "Integrated multiple third-party APIs, improved UI rendering performance, and maintained a GitLab CI/CD-based workflow throughout the full development lifecycle"
+    "bullet1": "Built React features for an advertising management dashboard — dynamic filtering, CRUD workflows, and analytics views — as part of a 2-person frontend team",
+    "bullet2": "Engineered a grant management web app from the ground up with React and a custom Django API, automating application tracking and approval workflows",
+    "bullet3": "Designed and implemented scalable Django REST endpoints backed by normalized PostgreSQL schemas tailored for data-heavy internal tooling",
+    "bullet4": "Integrated third-party APIs and improved UI rendering performance, reducing unnecessary re-renders and improving perceived responsiveness",
+    "bullet5": "Shipped consistently within a GitLab CI/CD pipeline and agile cycle, maintaining code quality across the full development lifecycle"
   },
   "education": {
     "sectionTitle": "Education & Certifications",
@@ -47,10 +49,10 @@
     "liveDemo": "Live Demo",
     "viewSource": "View Source",
     "weatherDescription": "A complete IoT weather station monitoring system with a Django REST backend, SvelteKit frontend dashboard, and ESP32 hardware clients for real-time environmental data collection across multiple stations.",
-    "weatherBullet1": "Real-time monitoring with instant updates of latest weather conditions",
-    "weatherBullet2": "Interactive charts for historical data visualization using LayerChart",
-    "weatherBullet3": "Multi-day weather forecasts and station management interface",
-    "weatherBullet4": "Full i18n support and custom ESP32 hardware integration"
+    "weatherBullet1": "Built end-to-end IoT pipeline from ESP32 + DHT sensor hardware through to a Django REST backend and SvelteKit dashboard",
+    "weatherBullet2": "Secured the API with JWT authentication and modelled sensor logs in a structured PostgreSQL schema for efficient querying",
+    "weatherBullet3": "Implemented server-side aggregation to turn raw time-series sensor data into historical trends and analytics",
+    "weatherBullet4": "Delivered a responsive dashboard with interactive data visualizations, multi-station management, and full i18n support"
   },
   "skills": {
     "sectionTitle": "Skills",
