@@ -7,13 +7,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { getTranslations, getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { FadeIn, FadeInView } from "@/components/motion";
 import { CVDownloadLink } from "@/components/cv-download-link";
 
-export default async function Page() {
-  const t = await getTranslations();
-  const locale = await getLocale();
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: "en" | "sk" }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
   const cvFile = `/Michal_Urban_Fullstack_Developer_${locale.toUpperCase()}.pdf`;
 
   return (

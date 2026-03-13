@@ -9,6 +9,10 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
+export const dynamic = "force-static";
+export const dynamicParams = false;
+export const revalidate = 86400;
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -45,10 +49,10 @@ export async function generateMetadata({
     authors: [{ name: "Michal Urban", url: "https://miqal.xyz" }],
     creator: "Michal Urban",
     robots: {
-      index: true,
+      index: locale === routing.defaultLocale,
       follow: true,
       googleBot: {
-        index: true,
+        index: locale === routing.defaultLocale,
         follow: true,
       },
     },
@@ -94,7 +98,7 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -102,7 +106,7 @@ export default async function LocaleLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen flex-col`}
       >
         <PostHogProvider>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -121,7 +125,7 @@ export default async function LocaleLayout({
                       miqal
                     </span>
                   </span>
-                  <FooterRights />
+                  <FooterRights locale={locale} />
                 </div>
               </footer>
             </ThemeProvider>
@@ -132,8 +136,8 @@ export default async function LocaleLayout({
   );
 }
 
-async function FooterRights() {
-  const t = await getTranslations("footer");
+async function FooterRights({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "footer" });
   return (
     <span>
       &copy; {new Date().getFullYear()} — {t("rights")}
