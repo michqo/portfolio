@@ -46,13 +46,20 @@
     "sectionTitle": "Projekty",
     "weatherTitle": "Systém meteorologických staníc",
     "weatherSubtitle": "IoT · Full Stack · Integrácia hardvéru",
+    "sleepTitle": "Kalkulačka spánkových cyklov",
+    "sleepSubtitle": "Next.js · Produktivita · Zdravie",
     "liveDemo": "Živá ukážka",
     "viewSource": "Zobraziť zdrojový kód",
     "weatherDescription": "Kompletný IoT systém na sledovanie meteorologických staníc — s Django REST backendom, SvelteKit dashboardom a ESP32 klientmi zbierajúcimi dáta o počasí v reálnom čase z viacerých staníc.",
+    "sleepDescription": "Buďte každé ráno oddýchnutí vďaka jednoduchej aplikácii, ktorá počíta ideálny čas zaspania a vstávania podľa 90-minútových spánkových cyklov.",
     "weatherBullet1": "Vytvoril komplexný IoT systém od hardvéru ESP32 + DHT senzorov cez Django REST backend až po SvelteKit dashboard",
     "weatherBullet2": "Zabezpečil API pomocou JWT autentifikácie a namodeloval logy senzorov v štruktúrovanej PostgreSQL schéme pre efektívne dopytovanie",
     "weatherBullet3": "Implementoval serverové agregačné dotazy na spracovanie surových časových radov do historických trendov a analytiky",
-    "weatherBullet4": "Vytvoril responzívny dashboard s interaktívnymi vizualizáciami dát, správou staníc a plnou podporou i18n"
+    "weatherBullet4": "Vytvoril responzívny dashboard s interaktívnymi vizualizáciami dát, správou staníc a plnou podporou i18n",
+    "sleepBullet1": "Inteligentný výpočet podľa 90-minútových REM cyklov pomáha zvoliť vhodné časy spánku pre kvalitnejší oddych",
+    "sleepBullet2": "Načasuje budenie do ľahšej fázy spánku, aby ste sa vyhli rannej malátnosti a mali viac energie",
+    "sleepBullet3": "Podporuje personalizované ciele s odporúčaním 4 až 6 kompletných spánkových cyklov",
+    "sleepBullet4": "Aplikácia je postavená ako jednoduchý Next.js projekt s dvoma routami: / a /calculator"
   },
   "skills": {
     "sectionTitle": "Zručnosti",

@@ -46,13 +46,20 @@
     "sectionTitle": "Projects",
     "weatherTitle": "Weather Station System",
     "weatherSubtitle": "IoT · Full Stack · Hardware Integration",
+    "sleepTitle": "Sleep Cycle Calculator",
+    "sleepSubtitle": "Next.js · Productivity · Health",
     "liveDemo": "Live Demo",
     "viewSource": "View Source",
     "weatherDescription": "A complete IoT weather station monitoring system with a Django REST backend, SvelteKit frontend dashboard, and ESP32 hardware clients for real-time environmental data collection across multiple stations.",
+    "sleepDescription": "Wake up feeling refreshed every day with a simple app that calculates ideal bedtime and wake-up times using 90-minute sleep cycles.",
     "weatherBullet1": "Built end-to-end IoT pipeline from ESP32 + DHT sensor hardware through to a Django REST backend and SvelteKit dashboard",
     "weatherBullet2": "Secured the API with JWT authentication and modelled sensor logs in a structured PostgreSQL schema for efficient querying",
     "weatherBullet3": "Implemented server-side aggregation to turn raw time-series sensor data into historical trends and analytics",
-    "weatherBullet4": "Delivered a responsive dashboard with interactive data visualizations, multi-station management, and full i18n support"
+    "weatherBullet4": "Delivered a responsive dashboard with interactive data visualizations, multi-station management, and full i18n support",
+    "sleepBullet1": "Smart cycle calculation based on 90-minute REM cycles helps choose sleep times for better rest quality",
+    "sleepBullet2": "Aligns wake-up time with lighter sleep phases to reduce morning grogginess and feel more energized",
+    "sleepBullet3": "Supports personalized sleep goals with recommended schedules for 4 to 6 complete sleep cycles",
+    "sleepBullet4": "Built as a simple Next.js app with two routes: / and /calculator"
   },
   "skills": {
     "sectionTitle": "Skills",
