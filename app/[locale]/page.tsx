@@ -268,6 +268,93 @@ export default async function Page({
               <Carousel className="w-full" opts={{ loop: true }}>
                 <CarouselContent>
                   {[
+                    { src: "/projects/subnify/home.png", alt: "Subnify home" },
+                    { src: "/projects/subnify/visualizer.png", alt: "Subnify visualizer" },
+                    { src: "/projects/subnify/calc.png", alt: "Subnify calculator" },
+                  ].map(({ src, alt }) => (
+                    <CarouselItem key={src}>
+                      <div className="relative aspect-video w-full overflow-hidden border-b border-border">
+                        <Image src={src} alt={alt} fill className="object-cover" />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-3" />
+                <CarouselNext className="right-3" />
+              </Carousel>
+
+              <div className="p-6">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h3 className="text-base font-semibold">{t("projects.subnifyTitle")}</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">{t("projects.subnifySubtitle")}</p>
+                  </div>
+                  <div className="flex shrink-0 flex-wrap gap-2">
+                    <a
+                      href="https://subnify.miqal.xyz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      {t("projects.liveDemo")}
+                    </a>
+                    <a
+                      href="https://github.com/michqo/subnify"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                    >
+                      <Github className="h-3.5 w-3.5" />
+                      {t("projects.viewSource")}
+                    </a>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-sm leading-relaxed text-pretty text-muted-foreground">
+                  {t("projects.subnifyDescription")}
+                </p>
+
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                  {(
+                    [
+                      "subnifyBullet1",
+                      "subnifyBullet2",
+                      "subnifyBullet3",
+                      "subnifyBullet4",
+                    ] as const
+                  ).map((key) => (
+                    <li key={key} className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      {t(`projects.${key}`)}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {[
+                    "Next.js",
+                    "TypeScript",
+                    "Networking",
+                    "VLSM",
+                    "CIDR",
+                    "RFC 1918",
+                  ].map((tag) => (
+                    <span
+                      key={tag}
+                      className="border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-border bg-card transition-colors hover:border-primary/50">
+              <Carousel className="w-full" opts={{ loop: true }}>
+                <CarouselContent>
+                  {[
                     { src: "/projects/sleep/homepage.png", alt: "Sleep cycle homepage" },
                     { src: "/projects/sleep/calculator.png", alt: "Sleep cycle calculator" },
                   ].map(({ src, alt }) => (
