@@ -286,7 +286,12 @@ export default async function Page({
               <div className="p-6">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h3 className="text-base font-semibold">{t("projects.subnifyTitle")}</h3>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-semibold">{t("projects.subnifyTitle")}</h3>
+                      <span className="border border-primary/30 bg-primary/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+                        {t("projects.subnifyBadge")}
+                      </span>
+                    </div>
                     <p className="mt-1 text-xs text-muted-foreground">{t("projects.subnifySubtitle")}</p>
                   </div>
                   <div className="flex shrink-0 flex-wrap gap-2">
@@ -322,6 +327,7 @@ export default async function Page({
                       "subnifyBullet2",
                       "subnifyBullet3",
                       "subnifyBullet4",
+                      "subnifyBullet5",
                     ] as const
                   ).map((key) => (
                     <li key={key} className="flex gap-2">
