@@ -15,6 +15,17 @@
     "downloadCV": "Download CV",
     "getInTouch": "Get in Touch"
   },
+  "experienceResco": {
+    "currentBadge": "Current",
+    "jobTitle": "Software Developer",
+    "company": "Resco",
+    "workType": "Hybrid",
+    "period": "Apr 2026 – Present",
+    "companyBlurb": "Mobile enterprise software running on Microsoft Power Apps and Dynamics 365, used by field teams across industries.",
+    "bullet1": "Developing features for Resco's Power Solutions — enterprise apps built on Microsoft Power Apps and Dynamics 365 — shipped to 160,000+ frontline users across industries",
+    "bullet2": "Extending Microsoft Power Platform with advanced mobile capabilities including offline-first data collection, document generation, and no-code/low-code customization",
+    "bullet3": "Working within a product team on tight Dataverse and Dynamics 365 backend integrations, contributing to a globally distributed commercial codebase"
+  },
   "experience": {
     "sectionTitle": "Experience",
     "jobTitle": "Frontend / Backend Developer",
