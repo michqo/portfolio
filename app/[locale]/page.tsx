@@ -24,7 +24,7 @@ export default async function Page({
     <div className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-20 sm:px-8">
       <div className="relative mx-auto w-full max-w-3xl font-mono">
         <FadeIn delay={0} className="mb-6 flex flex-wrap items-center gap-3">
-          <span className="inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary">
+          <span className="inline-flex items-center gap-2 rounded-md border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
             {t("hero.badge")}
           </span>
@@ -48,14 +48,14 @@ export default async function Page({
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
             href="#projects"
-            className="bg-primary px-6 py-2.5 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+            className="rounded-md bg-primary px-6 py-2.5 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
           >
             {t("hero.viewProjects")}
           </a>
           <CVDownloadLink href={cvFile} label={t("hero.downloadCV")} locale={locale} />
           <a
             href="#contact"
-            className="border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
+            className="rounded-md border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
           >
             {t("hero.getInTouch")}
           </a>
@@ -69,43 +69,96 @@ export default async function Page({
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("experience.sectionTitle")}</span>
             <div className="h-px flex-1 bg-border" />
           </div>
-          <div className="relative border border-border bg-card p-6 transition-colors hover:border-primary/50">
-            {/* accent bar */}
-            <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
+          <div className="flex flex-col gap-4">
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <h3 className="text-base font-semibold">{t("experience.jobTitle")}</h3>
-                <div className="mt-1 flex items-center gap-2 text-sm text-primary">
-                  <span>{t("experience.company")}</span>
-                  <span className="text-border">·</span>
-                  <span className="text-muted-foreground">{t("experience.workType")}</span>
+            {/* Resco – current role */}
+            <div className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
+              <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
+
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 className="text-base font-semibold">{t("experienceResco.jobTitle")}</h3>
+                  <div className="mt-1 flex items-center gap-2 text-sm text-primary">
+                    <span>{t("experienceResco.company")}</span>
+                    <span className="text-border">·</span>
+                    <span className="text-muted-foreground">{t("experienceResco.workType")}</span>
+                  </div>
+                </div>
+                <div className="flex shrink-0 flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-primary/30 bg-primary/5 px-2.5 py-1 text-xs text-primary">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+                    {t("experienceResco.currentBadge")}
+                  </span>
+                  <span className="rounded-md border border-border px-3 py-1 text-xs text-muted-foreground">
+                    {t("experienceResco.period")}
+                  </span>
                 </div>
               </div>
-              <span className="shrink-0 border border-border px-3 py-1 text-xs text-muted-foreground">
-                {t("experience.period")}
-              </span>
+
+              <p className="mt-3 text-xs text-muted-foreground/70 leading-relaxed">
+                {t("experienceResco.companyBlurb")}
+              </p>
+
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                {(["bullet1", "bullet2", "bullet3"] as const).map((key) => (
+                  <li key={key} className="flex gap-2">
+                    <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                    {t(`experienceResco.${key}`)}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["TypeScript", "React", "Power Apps", "Dynamics 365", "Power Platform"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              {(["bullet1", "bullet2", "bullet3", "bullet4", "bullet5"] as const).map((key) => (
-                <li key={key} className="flex gap-2">
-                  <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                  {t(`experience.${key}`)}
-                </li>
-              ))}
-            </ul>
+            {/* Backbone */}
+            <div className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
+              <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
 
-            <div className="mt-5 flex flex-wrap gap-2">
-              {["React", "Django", "PostgreSQL", "REST APIs", "GitLab"].map((tag) => (
-                <span
-                  key={tag}
-                  className="border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
-                >
-                  {tag}
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 className="text-base font-semibold">{t("experience.jobTitle")}</h3>
+                  <div className="mt-1 flex items-center gap-2 text-sm text-primary">
+                    <span>{t("experience.company")}</span>
+                    <span className="text-border">·</span>
+                    <span className="text-muted-foreground">{t("experience.workType")}</span>
+                  </div>
+                </div>
+                <span className="shrink-0 rounded-md border border-border px-3 py-1 text-xs text-muted-foreground">
+                  {t("experience.period")}
                 </span>
-              ))}
+              </div>
+
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                {(["bullet1", "bullet2", "bullet3", "bullet4", "bullet5"] as const).map((key) => (
+                  <li key={key} className="flex gap-2">
+                    <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                    {t(`experience.${key}`)}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["React", "Django", "PostgreSQL", "REST APIs", "GitLab"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
+
           </div>          </FadeInView>        </div>
 
         <div id="education" className="mt-20 pt-8">
@@ -118,7 +171,7 @@ export default async function Page({
 
           <div className="flex flex-col gap-4">
             {/* Education */}
-            <div className="relative border border-border bg-card p-6 transition-colors hover:border-primary/50">
+            <div className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
               <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
@@ -130,7 +183,7 @@ export default async function Page({
                     {t("education.schoolDescription")}
                   </p>
                 </div>
-                <span className="shrink-0 border border-border px-3 py-1 text-xs text-muted-foreground h-fit">
+                <span className="shrink-0 rounded-md border border-border px-3 py-1 text-xs text-muted-foreground h-fit">
                   {t("education.schoolPeriod")}
                 </span>
               </div>
@@ -138,7 +191,7 @@ export default async function Page({
             </div>
 
             {/* Certificates */}
-            <div className="relative border border-border bg-card p-6 transition-colors hover:border-primary/50">
+            <div className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
               <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
               <div className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
                 {t("education.certificationsLabel")}
@@ -156,7 +209,7 @@ export default async function Page({
                     <div className="min-w-0 flex-1">
                       <div className="flex items-start justify-between gap-2">
                         <p className="text-sm leading-snug">{t(`education.${titleKey}`)}</p>
-                        <span className="ml-1 mt-0.5 shrink-0 border border-border px-2 py-0.5 text-xs text-muted-foreground">
+                        <span className="ml-1 mt-0.5 shrink-0 rounded border border-border px-2 py-0.5 text-xs text-muted-foreground">
                           {year}
                         </span>
                       </div>
@@ -179,7 +232,7 @@ export default async function Page({
           </div>
 
           <div className="space-y-6">
-            <div className="border border-border bg-card transition-colors hover:border-primary/50">
+            <div className="overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50">
               <Carousel className="w-full" opts={{ loop: true }}>
                 <CarouselContent>
                   {[
@@ -212,7 +265,7 @@ export default async function Page({
                       href="https://ms.miqal.xyz"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                     >
                       <ExternalLink className="h-3.5 w-3.5" />
                       {t("projects.liveDemo")}
@@ -221,7 +274,7 @@ export default async function Page({
                       href="https://github.com/michqo/ms_web"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                     >
                       <Github className="h-3.5 w-3.5" />
                       {t("projects.viewSource")}
@@ -254,7 +307,7 @@ export default async function Page({
                     (tag) => (
                       <span
                         key={tag}
-                        className="border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
+                        className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
                       >
                         {tag}
                       </span>
@@ -264,7 +317,7 @@ export default async function Page({
               </div>
             </div>
 
-            <div className="border border-border bg-card transition-colors hover:border-primary/50">
+            <div className="overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50">
               <Carousel className="w-full" opts={{ loop: true }}>
                 <CarouselContent>
                   {[
@@ -288,7 +341,7 @@ export default async function Page({
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="text-base font-semibold">{t("projects.subnifyTitle")}</h3>
-                      <span className="border border-primary/30 bg-primary/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+                      <span className="rounded border border-primary/30 bg-primary/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
                         {t("projects.subnifyBadge")}
                       </span>
                     </div>
@@ -299,7 +352,7 @@ export default async function Page({
                       href="https://subnify.miqal.xyz"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                     >
                       <ExternalLink className="h-3.5 w-3.5" />
                       {t("projects.liveDemo")}
@@ -308,7 +361,7 @@ export default async function Page({
                       href="https://github.com/michqo/subnify"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                     >
                       <Github className="h-3.5 w-3.5" />
                       {t("projects.viewSource")}
@@ -348,7 +401,7 @@ export default async function Page({
                   ].map((tag) => (
                     <span
                       key={tag}
-                      className="border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
+                      className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
                     >
                       {tag}
                     </span>
@@ -357,7 +410,7 @@ export default async function Page({
               </div>
             </div>
 
-            <div className="border border-border bg-card transition-colors hover:border-primary/50">
+            <div className="overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50">
               <Carousel className="w-full" opts={{ loop: true }}>
                 <CarouselContent>
                   {[
@@ -386,7 +439,7 @@ export default async function Page({
                       href="https://www.sleep.miqal.xyz"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                     >
                       <ExternalLink className="h-3.5 w-3.5" />
                       {t("projects.liveDemo")}
@@ -395,7 +448,7 @@ export default async function Page({
                       href="https://github.com/michqo/sleep-cycle"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                     >
                       <Github className="h-3.5 w-3.5" />
                       {t("projects.viewSource")}
@@ -427,7 +480,7 @@ export default async function Page({
                   {["Next.js", "TypeScript", "Calculator", "Sleep Science"].map((tag) => (
                     <span
                       key={tag}
-                      className="border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
+                      className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
                     >
                       {tag}
                     </span>
@@ -504,7 +557,7 @@ export default async function Page({
                 },
               ] as const
             ).map(({ labelKey, items }) => (
-              <div key={labelKey} className="relative border border-border bg-card p-6 transition-colors hover:border-primary/50">
+              <div key={labelKey} className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
                 <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
                 <div className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary">
                   {t(`skills.${labelKey}`)}
@@ -514,7 +567,7 @@ export default async function Page({
                   {items.map((item) => (
                     <span
                       key={item}
-                      className="border border-border bg-muted/40 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      className="rounded-md border border-border bg-muted/40 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                     >
                       {item}
                     </span>
@@ -538,7 +591,7 @@ export default async function Page({
               href="https://github.com/michqo"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-4 border border-border bg-card p-5 transition-colors hover:border-primary"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary"
             >
               <div className="absolute inset-y-0 left-0 w-0.75 bg-primary opacity-0 transition-opacity group-hover:opacity-100" />
               <Github className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
@@ -554,7 +607,7 @@ export default async function Page({
               href="https://www.linkedin.com/in/michal-urban-0a763a324/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-4 border border-border bg-card p-5 transition-colors hover:border-primary"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary"
             >
               <div className="absolute inset-y-0 left-0 w-0.75 bg-primary opacity-0 transition-opacity group-hover:opacity-100" />
               <Linkedin className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
@@ -568,7 +621,7 @@ export default async function Page({
             </a>
             <a
               href="mailto:michal.urban724@gmail.com"
-              className="group relative flex items-center gap-4 border border-border bg-card p-5 transition-colors hover:border-primary"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary"
             >
               <div className="absolute inset-y-0 left-0 w-0.75 bg-primary opacity-0 transition-opacity group-hover:opacity-100" />
               <Mail className="h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
@@ -580,7 +633,7 @@ export default async function Page({
               </div>
               <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground/40 transition-all group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <div className="flex items-center gap-4 border border-border bg-card p-5">
+            <div className="flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card p-5">
               <MapPin className="h-5 w-5 shrink-0 text-muted-foreground" />
               <div className="min-w-0 flex-1">
                 <div className="text-xs text-muted-foreground">{t("contact.locationLabel")}</div>

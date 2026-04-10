@@ -17,7 +17,7 @@ export function CVDownloadLink({ href, label, locale }: CVDownloadLinkProps) {
       onClick={() => posthog.capture("Download CV", { locale })}
       target="_blank"
       rel="noopener noreferrer"
-      className="border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
+      className="rounded-md border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
     >
       {label}
     </a>
