@@ -10,6 +10,9 @@ import {
 import { getTranslations } from "next-intl/server";
 import { FadeIn, FadeInView } from "@/components/motion";
 import { CVDownloadLink } from "@/components/cv-download-link";
+import { TechBadge } from "@/components/tech-badge";
+import { SKILL_CATEGORIES, PROJECTS } from "@/lib/skills";
+import { HoverCardLabelsProvider } from "@/contexts/hover-card-labels-context";
 
 export default async function Page({
   params,
@@ -20,7 +23,16 @@ export default async function Page({
   const t = await getTranslations({ locale });
   const cvFile = `/Michal_Urban_Fullstack_Developer_${locale.toUpperCase()}.pdf`;
 
+  const hoverCardLabels = {
+    generalTooling: t("hoverCard.generalTooling"),
+    thisProject: t("hoverCard.thisProject"),
+    otherProjects: t("hoverCard.otherProjects"),
+    projects: t("hoverCard.projects"),
+    experience: t("hoverCard.experience"),
+  };
+
   return (
+    <HoverCardLabelsProvider labels={hoverCardLabels}>
     <div className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-20 sm:px-8">
       <div className="relative mx-auto w-full max-w-3xl font-mono">
         <FadeIn delay={0} className="mb-6 flex flex-wrap items-center gap-3">
@@ -32,8 +44,8 @@ export default async function Page({
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h1 className="mb-1 text-5xl font-bold tracking-tight text-balance sm:text-7xl">
-            Michal Urban
+          <h1 className="mb-1 text-6xl font-bold tracking-tight text-balance sm:text-8xl">
+            Michal Urban<span className="animate-blink ml-1 inline-block h-[0.8em] w-[3px] translate-y-[2px] rounded-sm bg-primary align-middle" />
           </h1>
           <div className="mb-8 text-sm text-muted-foreground">{t("hero.subtitle")}</div>
         </FadeIn>
@@ -48,14 +60,14 @@ export default async function Page({
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
             href="#projects"
-            className="rounded-md bg-primary px-6 py-2.5 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto"
+            className="rounded-md bg-primary px-6 py-2.5 text-center text-sm font-medium text-primary-foreground shadow-md shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/40 sm:w-auto"
           >
             {t("hero.viewProjects")}
           </a>
           <CVDownloadLink href={cvFile} label={t("hero.downloadCV")} locale={locale} />
           <a
             href="#contact"
-            className="rounded-md border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:text-primary sm:w-auto"
+            className="rounded-md border border-border px-6 py-2.5 text-center text-sm font-medium transition-colors hover:border-primary hover:bg-primary/5 hover:text-primary sm:w-auto"
           >
             {t("hero.getInTouch")}
           </a>
@@ -67,13 +79,13 @@ export default async function Page({
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">01</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("experience.sectionTitle")}</span>
-            <div className="h-px flex-1 bg-border" />
+            <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
           </div>
           <div className="flex flex-col gap-4">
 
             {/* Resco – current role */}
-            <div className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
-              <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
+            <div className="relative overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 via-card to-card p-6 transition-colors hover:border-primary/40">
+              <div className="absolute inset-y-0 left-0 w-1 bg-primary" />
 
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
@@ -102,7 +114,7 @@ export default async function Page({
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 {(["bullet1", "bullet2", "bullet3"] as const).map((key) => (
                   <li key={key} className="flex gap-2">
-                    <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary/80" />
                     {t(`experienceResco.${key}`)}
                   </li>
                 ))}
@@ -110,12 +122,7 @@ export default async function Page({
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {["TypeScript", "React", "Power Apps", "Dynamics 365", "Power Platform"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
-                  >
-                    {tag}
-                  </span>
+                  <TechBadge key={tag} label={tag} variant="project" />
                 ))}
               </div>
             </div>
@@ -139,9 +146,9 @@ export default async function Page({
               </div>
 
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                {(["bullet1", "bullet2", "bullet3", "bullet4", "bullet5"] as const).map((key) => (
+                {(["bullet1", "bullet2", "bullet3", "bullet4"] as const).map((key) => (
                   <li key={key} className="flex gap-2">
-                    <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary/80" />
                     {t(`experience.${key}`)}
                   </li>
                 ))}
@@ -149,12 +156,7 @@ export default async function Page({
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {["React", "Django", "PostgreSQL", "REST APIs", "GitLab"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
-                  >
-                    {tag}
-                  </span>
+                  <TechBadge key={tag} label={tag} variant="project" />
                 ))}
               </div>
             </div>
@@ -166,7 +168,7 @@ export default async function Page({
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">02</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("education.sectionTitle")}</span>
-            <div className="h-px flex-1 bg-border" />
+            <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
           </div>
 
           <div className="flex flex-col gap-4">
@@ -205,7 +207,7 @@ export default async function Page({
                   ] as const
                 ).map(({ titleKey, issuerKey, year }) => (
                   <div key={titleKey} className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary/80" />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-start justify-between gap-2">
                         <p className="text-sm leading-snug">{t(`education.${titleKey}`)}</p>
@@ -228,7 +230,7 @@ export default async function Page({
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">03</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("projects.sectionTitle")}</span>
-            <div className="h-px flex-1 bg-border" />
+            <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
           </div>
 
           <div className="space-y-6">
@@ -292,11 +294,10 @@ export default async function Page({
                       "weatherBullet1",
                       "weatherBullet2",
                       "weatherBullet3",
-                      "weatherBullet4",
                     ] as const
                   ).map((key) => (
                     <li key={key} className="flex gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary/80" />
                       {t(`projects.${key}`)}
                     </li>
                   ))}
@@ -305,12 +306,7 @@ export default async function Page({
                 <div className="mt-5 flex flex-wrap gap-2">
                   {["SvelteKit", "Django", "ESP32", "TypeScript", "PostgreSQL", "LayerChart"].map(
                     (tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
-                      >
-                        {tag}
-                      </span>
+                      <TechBadge key={tag} label={tag} variant="project" currentProject={PROJECTS.WEATHER} />
                     ),
                   )}
                 </div>
@@ -377,14 +373,12 @@ export default async function Page({
                   {(
                     [
                       "subnifyBullet1",
-                      "subnifyBullet2",
                       "subnifyBullet3",
                       "subnifyBullet4",
-                      "subnifyBullet5",
                     ] as const
                   ).map((key) => (
                     <li key={key} className="flex gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary/80" />
                       {t(`projects.${key}`)}
                     </li>
                   ))}
@@ -399,12 +393,7 @@ export default async function Page({
                     "CIDR",
                     "RFC 1918",
                   ].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
-                    >
-                      {tag}
-                    </span>
+                    <TechBadge key={tag} label={tag} variant="project" currentProject={PROJECTS.SUBNIFY} />
                   ))}
                 </div>
               </div>
@@ -465,12 +454,10 @@ export default async function Page({
                     [
                       "sleepBullet1",
                       "sleepBullet2",
-                      "sleepBullet3",
-                      "sleepBullet4",
                     ] as const
                   ).map((key) => (
                     <li key={key} className="flex gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary/80" />
                       {t(`projects.${key}`)}
                     </li>
                   ))}
@@ -478,12 +465,7 @@ export default async function Page({
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {["Next.js", "TypeScript", "Calculator", "Sleep Science"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-md border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs text-primary"
-                    >
-                      {tag}
-                    </span>
+                    <TechBadge key={tag} label={tag} variant="project" currentProject={PROJECTS.SLEEP} />
                   ))}
                 </div>
               </div>
@@ -497,80 +479,22 @@ export default async function Page({
           <div className="mb-8 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">04</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("skills.sectionTitle")}</span>
-            <div className="h-px flex-1 bg-border" />
+            <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {(
-              [
-                {
-                  labelKey: "frontend" as const,
-                  items: [
-                    "React",
-                    "Next.js",
-                    "TypeScript",
-                    "Tailwind CSS",
-                    "Svelte",
-                    "SvelteKit",
-                    "Vite",
-                    "Redux Toolkit",
-                    "Redux Saga",
-                    "shadcn/ui",
-                    "SCSS",
-                    "PostCSS",
-                  ],
-                },
-                {
-                  labelKey: "backend" as const,
-                  items: [
-                    "Python",
-                    "Django",
-                    "Django REST Framework",
-                    "FastAPI",
-                    "Node.js",
-                    "Express",
-                    "Go",
-                    "Rust",
-                    "MongoDB",
-                    "Prisma",
-                    "Jest",
-                    "Mocha",
-                  ],
-                },
-                {
-                  labelKey: "devops" as const,
-                  items: ["Docker", "Git", "GitHub Actions", "AWS", "Linux"],
-                },
-                {
-                  labelKey: "tools" as const,
-                  items: [
-                    "GitHub",
-                    "GitLab",
-                    "VS Code",
-                    "Figma",
-                    "Vercel",
-                    "Postman",
-                    "Fly.io",
-                    "Neovim",
-                    "Hoppscotch",
-                    "Trello",
-                  ],
-                },
-              ] as const
-            ).map(({ labelKey, items }) => (
+            {SKILL_CATEGORIES.map(({ labelKey, items }) => (
               <div key={labelKey} className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50">
                 <div className="absolute inset-y-0 left-0 w-0.75 bg-primary" />
-                <div className="mb-1 text-xs font-semibold uppercase tracking-widest text-primary">
+                <div className="mb-1 text-sm font-bold uppercase tracking-widest text-primary">
                   {t(`skills.${labelKey}`)}
                 </div>
-                <div className="mb-6 text-xs text-muted-foreground">{items.length} {t(`skills.technologies`)}</div>
+                <div className="mb-6 flex items-center gap-2 text-xs text-muted-foreground">
+                  <span className="rounded-full border border-border px-2 py-0.5 tabular-nums">{items.length}</span>
+                  <span>{t(`skills.technologies`)}</span>
+                </div>
                 <div className="flex flex-wrap gap-2">
-                  {items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-md border border-border bg-muted/40 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-                    >
-                      {item}
-                    </span>
+                  {items.map(({ label }) => (
+                    <TechBadge key={label} label={label} variant="skill" />
                   ))}
                 </div>
               </div>
@@ -584,8 +508,9 @@ export default async function Page({
           <div className="mb-6 flex items-center gap-3">
             <span className="text-xs font-bold text-primary/50">05</span>
             <span className="text-xs font-semibold uppercase tracking-widest text-foreground">{t("contact.sectionTitle")}</span>
-            <div className="h-px flex-1 bg-border" />
+            <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
           </div>
+          <p className="mb-6 text-sm text-muted-foreground">{t("contact.intro")}</p>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <a
               href="https://github.com/michqo"
@@ -645,5 +570,6 @@ export default async function Page({
         </div>
       </div>
     </div>
+    </HoverCardLabelsProvider>
   );
 }

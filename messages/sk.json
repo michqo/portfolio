@@ -7,10 +7,10 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "badge": "Otvorený pracovným príležitostiam",
+    "badge": "Pracujem v Resco",
     "role": "Full Stack Developer",
     "subtitle": "Bratislava, Slovensko",
-    "description": "Full Stack developer s komerčnými skúsenosťami v dodávaní React aplikácií a Django REST API do produkcie. Baví ma backendová architektúra, relačné databázy a tvorba spoľahlivých riešení postavených na dátach.",
+    "description": "Vyvíjam softvér v Resco — pracujem na React webovej vrstve zabudovanej v podnikových mobilných aplikáciách, dodávaných 160 000+ používateľom. Vo voľnom čase tvorím vlastné projekty: IoT systémy, webové nástroje a čokoľvek, čo považujem za hodné postaviť.",
     "viewProjects": "Zobraziť projekty",
     "downloadCV": "Stiahnuť životopis",
     "getInTouch": "Kontaktujte ma"
@@ -22,7 +22,7 @@
     "workType": "Hybridná práca",
     "period": "Apr 2026 – Súčasnosť",
     "companyBlurb": "Mobilný podnikový softvér bežiaci na Microsoft Power Apps a Dynamics 365, využívaný terénymi tímami naprieč odvetviami.",
-    "bullet1": "Vyvíjam funkcie pre Resco Power Solutions — podnikové aplikácie postavené na Microsoft Power Apps a Dynamics 365 — dodávané viac ako 160 000 terénnym používateľom naprieč odvetviami",
+    "bullet1": "Vyvíjam funkcie pre Resco Power Solutions — podnikové aplikácie postavené na Microsoft Power Apps a Dynamics 365",
     "bullet2": "Rozširujem Microsoft Power Platform o pokročilé mobilné možnosti: offline zber dát, generovanie dokumentov a no-code/low-code prispôsobenie",
     "bullet3": "Pracujem v produktovom tíme na integrácii s Dataverse a Dynamics 365 backendom a prispievam do globálne distribuovanej komerčnej kódovej základne"
   },
@@ -35,8 +35,7 @@
     "bullet1": "Vyvíjal React funkcie pre dashboard správy reklám — dynamické filtrovanie, CRUD operácie a analytické prehľady — ako súčasť 2-členného frontend tímu",
     "bullet2": "Vytvoril aplikáciu na správu grantov od základu pomocou React a vlastného Django API, čím zautomatizoval sledovanie a schvaľovanie žiadostí",
     "bullet3": "Navrhol a implementoval škálovateľné Django REST endpointy s normalizovanými PostgreSQL schémami pre dátovo náročné interné nástroje",
-    "bullet4": "Integroval API tretích strán a zlepšil výkon UI, znížením zbytočných prerendrovania a zlepšením vnímanej odozvy",
-    "bullet5": "Pravidelne dodával v prostredí GitLab CI/CD a agilného vývoja pri zachovaní vysokej kvality kódu počas celého vývojového cyklu"
+    "bullet4": "Integroval API tretích strán a zlepšil výkon UI, znížením zbytočných prerendrovania a zlepšením vnímanej odozvy"
   },
   "education": {
     "sectionTitle": "Vzdelanie a certifikácie",
@@ -64,22 +63,17 @@
     "sleepSubtitle": "Next.js · Produktivita · Zdravie",
     "liveDemo": "Živá ukážka",
     "viewSource": "Zobraziť zdrojový kód",
-    "weatherDescription": "Kompletný IoT systém na sledovanie meteorologických staníc — s Django REST backendom, SvelteKit dashboardom a ESP32 klientmi zbierajúcimi dáta o počasí v reálnom čase z viacerých staníc.",
-    "subnifyDescription": "Praktický nástroj na plánovanie subnetov pre návrh IPv4 VLSM alokácií, vrátane AI asistovaného návrhára sietí, ktorý pomôže vytvoriť počiatočný plán zo zadaných vstupov.",
-    "sleepDescription": "Buďte každé ráno oddýchnutí vďaka jednoduchej aplikácii, ktorá počíta ideálny čas zaspania a vstávania podľa 90-minútových spánkových cyklov.",
+    "weatherDescription": "Začalo to ako maturitný projekt a postupne z toho vyrástlo niečo väčšie — chcel som niečo, čo je skutočne moje, užitočné aj zaujímavé na tvorbu. Kompletný IoT systém od ESP32 hardvérových senzorov cez Django REST backend až po SvelteKit dashboard sledujúci reálne environmentálne dáta z viacerých staníc.",
+    "subnifyDescription": "Nenašiel som subnet kalkulačku, ktorá by mi vyhovovala, tak som si ju postavil. Začalo to ako jednoduchý VLSM plánovač a skončilo s vizualizátorom subnetov a AI asistovaným návrhom siete — a ďalší dobrý prírastok do môjho ekosystému aplikácií.",
+    "sleepDescription": "Malá utilita postavená na riešenie osobného problému — počíta ideálne časy zaspania a vstávania podľa 90-minútových spánkových cyklov, aby ste sa ráno naozaj cítili oddýchnutí.",
     "weatherBullet1": "Vytvoril komplexný IoT systém od hardvéru ESP32 + DHT senzorov cez Django REST backend až po SvelteKit dashboard",
     "weatherBullet2": "Zabezpečil API pomocou JWT autentifikácie a namodeloval logy senzorov v štruktúrovanej PostgreSQL schéme pre efektívne dopytovanie",
     "weatherBullet3": "Implementoval serverové agregačné dotazy na spracovanie surových časových radov do historických trendov a analytiky",
-    "weatherBullet4": "Vytvoril responzívny dashboard s interaktívnymi vizualizáciami dát, správou staníc a plnou podporou i18n",
     "subnifyBullet1": "Navrhujte IPv4 subnet plány vo workflow zameranom na VLSM",
-    "subnifyBullet2": "Prideľujte subnet bloky podľa požiadaviek na hostov pomocou stratégie od najväčších potrieb",
     "subnifyBullet3": "Vizualizujte, ako jednotlivé subnety zapadajú do rodičovskej siete",
     "subnifyBullet4": "Použite AI návrhára sietí (s pomocou modelu) na vygenerovanie prvého subnet plánu zo zámeru a obmedzení, ktorý potom viete manuálne upraviť",
-    "subnifyBullet5": "Používajte CIDR notáciu a privátne rozsahy podľa RFC 1918 a exportujte plány pre dokumentáciu a tímovú revíziu",
     "sleepBullet1": "Inteligentný výpočet podľa 90-minútových REM cyklov pomáha zvoliť vhodné časy spánku pre kvalitnejší oddych",
-    "sleepBullet2": "Načasuje budenie do ľahšej fázy spánku, aby ste sa vyhli rannej malátnosti a mali viac energie",
-    "sleepBullet3": "Podporuje personalizované ciele s odporúčaním 4 až 6 kompletných spánkových cyklov",
-    "sleepBullet4": "Aplikácia je postavená ako jednoduchý Next.js projekt s dvoma routami: / a /calculator"
+    "sleepBullet2": "Načasuje budenie do ľahšej fázy spánku, aby ste sa vyhli rannej malátnosti a mali viac energie"
   },
   "skills": {
     "sectionTitle": "Zručnosti",
@@ -91,6 +85,7 @@
   },
   "contact": {
     "sectionTitle": "Kontakt",
+    "intro": "Chcete spolupracovať, máte otázku alebo sa len chcete ozvať — napíšte mi.",
     "locationLabel": "Lokalita",
     "location": "Bratislava, Slovensko"
   },
@@ -103,5 +98,12 @@
     "enDescription": "Switch to English",
     "sk": "Slovenčina",
     "skDescription": "Prepnúť na slovenčinu"
+  },
+  "hoverCard": {
+    "generalTooling": "Všeobecné nástroje",
+    "thisProject": "Tento projekt",
+    "otherProjects": "Iné projekty",
+    "projects": "Projekty",
+    "experience": "Skúsenosti"
   }
 }
