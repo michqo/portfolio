@@ -11,7 +11,6 @@ import "../globals.css";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
-export const revalidate = 86400;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +47,13 @@ export async function generateMetadata({
     ],
     authors: [{ name: "Michal Urban", url: "https://miqal.xyz" }],
     creator: "Michal Urban",
+    alternates: {
+      canonical: locale === routing.defaultLocale ? "https://miqal.xyz" : `https://miqal.xyz/${locale}`,
+      languages: {
+        "en": "https://miqal.xyz",
+        "sk": "https://miqal.xyz/sk",
+      },
+    },
     robots: {
       index: locale === routing.defaultLocale,
       follow: true,
@@ -63,14 +69,14 @@ export async function generateMetadata({
       siteName: "Miqal",
       locale: locale === "sk" ? "sk_SK" : "en_US",
       type: "website",
-      images: [
-        {
-          url: "/og-preview.png",
-          width: 800,
-          height: 400,
-          alt: "Miqal — Software Developer Portfolio",
-        },
-      ],
+        images: [
+          {
+            url: "/og-preview.png",
+            width: 1200,
+            height: 630,
+            alt: "Miqal — Software Developer Portfolio",
+          },
+        ],
     },
     twitter: {
       card: "summary_large_image",

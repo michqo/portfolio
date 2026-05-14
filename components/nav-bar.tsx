@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "@/i18n/navigation";
-import { Github, Cloud, Network, Moon, LayoutGrid } from "lucide-react";
+import { Github, LayoutGrid } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
 import { cn } from "@/lib/utils";
@@ -14,31 +14,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { PROJECT_LIST } from "@/lib/projects";
 
 const FLOAT_IN = 80;
 const FLOAT_OUT = 40;
 const EASE = { duration: 0.5, ease: [0.4, 0, 0.2, 1] } as const;
-
-const APPS = [
-  {
-    name: "Weather Station",
-    href: "https://ms.miqal.xyz",
-    description: "IoT monitoring dashboard",
-    icon: Cloud,
-  },
-  {
-    name: "Subnify",
-    href: "https://subnify.miqal.xyz",
-    description: "IPv4 subnet planner",
-    icon: Network,
-  },
-  {
-    name: "Sleep Cycle",
-    href: "https://www.sleep.miqal.xyz",
-    description: "Sleep schedule calculator",
-    icon: Moon,
-  },
-];
 
 export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -59,32 +39,25 @@ export function NavBar() {
 
   return (
     <div className="sticky top-0 z-50 w-full">
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: -12,
-          maxWidth: "100%",
-          paddingLeft: 0,
-          paddingRight: 0,
-          paddingTop: 0,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-          maxWidth: scrolled ? 672 : 10000,
-          paddingLeft: scrolled ? 16 : 0,
-          paddingRight: scrolled ? 16 : 0,
-          paddingTop: scrolled ? 8 : 0,
-        }}
-        transition={{
-          opacity: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
-          y: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
-          maxWidth: EASE,
-          paddingLeft: EASE,
-          paddingRight: EASE,
-          paddingTop: EASE,
-        }}
-        style={{ width: "100%" }}
+        <motion.div
+          initial={{ opacity: 0, y: -12, width: "100%", paddingLeft: 0, paddingRight: 0, paddingTop: 0 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            width: scrolled ? "672px" : "100%",
+            paddingLeft: scrolled ? 16 : 0,
+            paddingRight: scrolled ? 16 : 0,
+            paddingTop: scrolled ? 8 : 0,
+          }}
+          transition={{
+            opacity: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
+            y: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
+            width: EASE,
+            paddingLeft: EASE,
+            paddingRight: EASE,
+            paddingTop: EASE,
+          }}
+        style={{ maxWidth: "100%" }}
         className="mx-auto"
       >
         <motion.header
@@ -118,7 +91,7 @@ export function NavBar() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-60 p-1.5">
-                  {APPS.map(({ name, href, description, icon: Icon }) => (
+                  {PROJECT_LIST.map(({ name, href, description, icon: Icon }) => (
                     <DropdownMenuItem key={href} asChild>
                       <a
                         href={href}

@@ -1,3 +1,6 @@
+import { PROJECTS } from "./projects";
+export { PROJECTS } from "./projects";
+
 export type SkillUsage = {
   label: string;
   projects?: string[];
@@ -8,13 +11,6 @@ export type SkillCategory = {
   labelKey: "frontend" | "backend" | "devops" | "tools";
   items: SkillUsage[];
 };
-
-// Project name constants — must match the project titles used in the UI
-export const PROJECTS = {
-  WEATHER: "Weather Station",
-  SUBNIFY: "Subnify",
-  SLEEP: "Sleep Cycle",
-} as const;
 
 // Experience name constants — must match company names used in the UI
 export const EXPERIENCE = {
@@ -39,10 +35,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { label: "Vite", experience: [EXPERIENCE.BACKBONE] },
       { label: "Redux Toolkit", experience: [EXPERIENCE.BACKBONE] },
       { label: "Redux Saga", experience: [EXPERIENCE.BACKBONE] },
-      {
-        label: "shadcn/ui",
-        projects: [PROJECTS.SUBNIFY, PROJECTS.SLEEP],
-      },
+      { label: "shadcn/ui", projects: [PROJECTS.SUBNIFY, PROJECTS.SLEEP] },
       { label: "SCSS", experience: [EXPERIENCE.BACKBONE] },
     ],
   },
@@ -64,12 +57,21 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
         projects: [PROJECTS.WEATHER],
         experience: [EXPERIENCE.BACKBONE],
       },
+      {
+        label: "PostgreSQL",
+        projects: [PROJECTS.WEATHER],
+        experience: [EXPERIENCE.BACKBONE],
+      },
       { label: "FastAPI" },
       { label: "Node.js" },
       { label: "Express" },
       { label: "MongoDB" },
       { label: "Prisma" },
       { label: "Jest" },
+      { label: "REST APIs", experience: [EXPERIENCE.BACKBONE] },
+      { label: "Power Apps", experience: [EXPERIENCE.RESCO] },
+      { label: "Dynamics 365", experience: [EXPERIENCE.RESCO] },
+      { label: "Power Platform", experience: [EXPERIENCE.RESCO] },
     ],
   },
   {

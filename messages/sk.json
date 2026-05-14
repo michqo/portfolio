@@ -70,8 +70,8 @@
     "weatherBullet2": "Zabezpečil API pomocou JWT autentifikácie a namodeloval logy senzorov v štruktúrovanej PostgreSQL schéme pre efektívne dopytovanie",
     "weatherBullet3": "Implementoval serverové agregačné dotazy na spracovanie surových časových radov do historických trendov a analytiky",
     "subnifyBullet1": "Navrhujte IPv4 subnet plány vo workflow zameranom na VLSM",
-    "subnifyBullet3": "Vizualizujte, ako jednotlivé subnety zapadajú do rodičovskej siete",
-    "subnifyBullet4": "Použite AI návrhára sietí (s pomocou modelu) na vygenerovanie prvého subnet plánu zo zámeru a obmedzení, ktorý potom viete manuálne upraviť",
+    "subnifyBullet2": "Vizualizujte, ako jednotlivé subnety zapadajú do rodičovskej siete",
+    "subnifyBullet3": "Použite AI návrhára sietí (s pomocou modelu) na vygenerovanie prvého subnet plánu zo zámeru a obmedzení, ktorý potom viete manuálne upraviť",
     "sleepBullet1": "Inteligentný výpočet podľa 90-minútových REM cyklov pomáha zvoliť vhodné časy spánku pre kvalitnejší oddych",
     "sleepBullet2": "Načasuje budenie do ľahšej fázy spánku, aby ste sa vyhli rannej malátnosti a mali viac energie"
   },

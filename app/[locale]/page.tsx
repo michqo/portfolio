@@ -11,7 +11,8 @@ import { getTranslations } from "next-intl/server";
 import { FadeIn, FadeInView } from "@/components/motion";
 import { CVDownloadLink } from "@/components/cv-download-link";
 import { TechBadge } from "@/components/tech-badge";
-import { SKILL_CATEGORIES, PROJECTS } from "@/lib/skills";
+import { SKILL_CATEGORIES } from "@/lib/skills";
+import { PROJECTS } from "@/lib/projects";
 import { HoverCardLabelsProvider } from "@/contexts/hover-card-labels-context";
 
 export default async function Page({
@@ -238,14 +239,14 @@ export default async function Page({
               <Carousel className="w-full" opts={{ loop: true }}>
                 <CarouselContent>
                   {[
-                    { src: "/projects/weather/homepage.png", alt: "Homepage" },
-                    { src: "/projects/weather/dashboard.png", alt: "Dashboard" },
-                    { src: "/projects/weather/measurements.png", alt: "Measurements" },
-                    { src: "/projects/weather/forecast.png", alt: "Forecast" },
-                  ].map(({ src, alt }) => (
+                    { src: "/projects/weather/homepage.png", alt: "Weather station homepage" },
+                    { src: "/projects/weather/dashboard.png", alt: "Weather station dashboard showing sensor readings" },
+                    { src: "/projects/weather/measurements.png", alt: "Weather station measurements view" },
+                    { src: "/projects/weather/forecast.png", alt: "Weather station forecast view" },
+                  ].map(({ src, alt }, index) => (
                     <CarouselItem key={src}>
                       <div className="relative aspect-video w-full overflow-hidden border-b border-border">
-                        <Image src={src} alt={alt} fill className="object-cover" />
+                        <Image src={src} alt={alt} fill className="object-cover" priority={index === 0} />
                       </div>
                     </CarouselItem>
                   ))}
@@ -317,13 +318,13 @@ export default async function Page({
               <Carousel className="w-full" opts={{ loop: true }}>
                 <CarouselContent>
                   {[
-                    { src: "/projects/subnify/home.png", alt: "Subnify home" },
-                    { src: "/projects/subnify/visualizer.png", alt: "Subnify visualizer" },
-                    { src: "/projects/subnify/calc.png", alt: "Subnify calculator" },
-                  ].map(({ src, alt }) => (
+                    { src: "/projects/subnify/home.png", alt: "Subnify subnet planner homepage" },
+                    { src: "/projects/subnify/visualizer.png", alt: "Subnify subnet visualizer" },
+                    { src: "/projects/subnify/calc.png", alt: "Subnify VLSM calculator" },
+                  ].map(({ src, alt }, index) => (
                     <CarouselItem key={src}>
                       <div className="relative aspect-video w-full overflow-hidden border-b border-border">
-                        <Image src={src} alt={alt} fill className="object-cover" />
+                        <Image src={src} alt={alt} fill className="object-cover" priority={index === 0} />
                       </div>
                     </CarouselItem>
                   ))}
@@ -373,8 +374,8 @@ export default async function Page({
                   {(
                     [
                       "subnifyBullet1",
+                      "subnifyBullet2",
                       "subnifyBullet3",
-                      "subnifyBullet4",
                     ] as const
                   ).map((key) => (
                     <li key={key} className="flex gap-2">
@@ -403,12 +404,12 @@ export default async function Page({
               <Carousel className="w-full" opts={{ loop: true }}>
                 <CarouselContent>
                   {[
-                    { src: "/projects/sleep/homepage.png", alt: "Sleep cycle homepage" },
-                    { src: "/projects/sleep/calculator.png", alt: "Sleep cycle calculator" },
-                  ].map(({ src, alt }) => (
+                    { src: "/projects/sleep/homepage.png", alt: "Sleep cycle calculator homepage" },
+                    { src: "/projects/sleep/calculator.png", alt: "Sleep cycle calculator showing recommended wake times" },
+                  ].map(({ src, alt }, index) => (
                     <CarouselItem key={src}>
                       <div className="relative aspect-video w-full overflow-hidden border-b border-border">
-                        <Image src={src} alt={alt} fill className="object-cover" />
+                        <Image src={src} alt={alt} fill className="object-cover" priority={index === 0} />
                       </div>
                     </CarouselItem>
                   ))}
