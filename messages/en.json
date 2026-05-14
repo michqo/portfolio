@@ -7,10 +7,10 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Open to opportunities",
+    "badge": "Working at Resco",
     "role": "Full Stack Developer",
     "subtitle": "Bratislava, Slovakia",
-    "description": "Full Stack Developer with commercial experience delivering React frontends and Django REST APIs in production. Passionate about backend architecture, relational databases, and building reliable, data-driven applications.",
+    "description": "I build software at Resco — working on the React web layer embedded in enterprise mobile apps, shipped to 160k+ field users. Outside work I ship my own projects: IoT systems, web tools, whatever I find worth building.",
     "viewProjects": "View Projects",
     "downloadCV": "Download CV",
     "getInTouch": "Get in Touch"
@@ -35,8 +35,7 @@
     "bullet1": "Built React features for an advertising management dashboard — dynamic filtering, CRUD workflows, and analytics views — as part of a 2-person frontend team",
     "bullet2": "Engineered a grant management web app from the ground up with React and a custom Django API, automating application tracking and approval workflows",
     "bullet3": "Designed and implemented scalable Django REST endpoints backed by normalized PostgreSQL schemas tailored for data-heavy internal tooling",
-    "bullet4": "Integrated third-party APIs and improved UI rendering performance, reducing unnecessary re-renders and improving perceived responsiveness",
-    "bullet5": "Shipped consistently within a GitLab CI/CD pipeline and agile cycle, maintaining code quality across the full development lifecycle"
+    "bullet4": "Integrated third-party APIs and improved UI rendering performance, reducing unnecessary re-renders and improving perceived responsiveness"
   },
   "education": {
     "sectionTitle": "Education & Certifications",
@@ -64,22 +63,17 @@
     "sleepSubtitle": "Next.js · Productivity · Health",
     "liveDemo": "Live Demo",
     "viewSource": "View Source",
-    "weatherDescription": "A complete IoT weather station monitoring system with a Django REST backend, SvelteKit frontend dashboard, and ESP32 hardware clients for real-time environmental data collection across multiple stations.",
-    "subnifyDescription": "A practical subnet planning tool for designing IPv4 VLSM allocations, including an AI-assisted network designer that helps create an initial plan from your inputs.",
-    "sleepDescription": "Wake up feeling refreshed every day with a simple app that calculates ideal bedtime and wake-up times using 90-minute sleep cycles.",
+    "weatherDescription": "Started as my maturita final project and grew from there — I wanted something that was actually mine, both useful and interesting to build. A full IoT pipeline from ESP32 hardware sensors through a Django REST backend to a SvelteKit dashboard, monitoring real environmental data across multiple stations.",
+    "subnifyDescription": "I couldn't find a subnet calculator I actually liked, so I built one. It started as a straightforward VLSM planner and ended up with a subnet visualizer and an AI-assisted network designer on top — and a good addition to my own ecosystem of apps.",
+    "sleepDescription": "A small utility built to solve a personal problem — calculating ideal bedtimes and wake-up times using 90-minute sleep cycles so you actually wake up feeling rested instead of groggy.",
     "weatherBullet1": "Built end-to-end IoT pipeline from ESP32 + DHT sensor hardware through to a Django REST backend and SvelteKit dashboard",
     "weatherBullet2": "Secured the API with JWT authentication and modelled sensor logs in a structured PostgreSQL schema for efficient querying",
     "weatherBullet3": "Implemented server-side aggregation to turn raw time-series sensor data into historical trends and analytics",
-    "weatherBullet4": "Delivered a responsive dashboard with interactive data visualizations, multi-station management, and full i18n support",
     "subnifyBullet1": "Design IPv4 subnet plans with a workflow focused on VLSM",
-    "subnifyBullet2": "Allocate subnet blocks from host requirements using a largest-first approach",
     "subnifyBullet3": "Visualize how each subnet fits into the parent network",
     "subnifyBullet4": "Use an AI network designer (model-assisted) to generate a first subnet plan from intent and constraints, then refine it manually",
-    "subnifyBullet5": "Use CIDR notation and RFC 1918 private ranges, and export plans for documentation and team review",
     "sleepBullet1": "Smart cycle calculation based on 90-minute REM cycles helps choose sleep times for better rest quality",
-    "sleepBullet2": "Aligns wake-up time with lighter sleep phases to reduce morning grogginess and feel more energized",
-    "sleepBullet3": "Supports personalized sleep goals with recommended schedules for 4 to 6 complete sleep cycles",
-    "sleepBullet4": "Built as a simple Next.js app with two routes: / and /calculator"
+    "sleepBullet2": "Aligns wake-up time with lighter sleep phases to reduce morning grogginess and feel more energized"
   },
   "skills": {
     "sectionTitle": "Skills",
@@ -91,6 +85,7 @@
   },
   "contact": {
     "sectionTitle": "Contact",
+    "intro": "Want to work together, have a question, or just want to say hi — reach out.",
     "locationLabel": "Location",
     "location": "Bratislava, Slovakia"
   },
@@ -103,5 +98,12 @@
     "enDescription": "Switch to English",
     "sk": "Slovak",
     "skDescription": "Prepnúť na slovenčinu"
+  },
+  "hoverCard": {
+    "generalTooling": "General development tooling and practices",
+    "thisProject": "This project",
+    "otherProjects": "Other projects",
+    "projects": "Projects",
+    "experience": "Experience"
   }
 }
