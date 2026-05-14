@@ -70,8 +70,8 @@
     "weatherBullet2": "Secured the API with JWT authentication and modelled sensor logs in a structured PostgreSQL schema for efficient querying",
     "weatherBullet3": "Implemented server-side aggregation to turn raw time-series sensor data into historical trends and analytics",
     "subnifyBullet1": "Design IPv4 subnet plans with a workflow focused on VLSM",
-    "subnifyBullet3": "Visualize how each subnet fits into the parent network",
-    "subnifyBullet4": "Use an AI network designer (model-assisted) to generate a first subnet plan from intent and constraints, then refine it manually",
+    "subnifyBullet2": "Visualize how each subnet fits into the parent network",
+    "subnifyBullet3": "Use an AI network designer (model-assisted) to generate a first subnet plan from intent and constraints, then refine it manually",
     "sleepBullet1": "Smart cycle calculation based on 90-minute REM cycles helps choose sleep times for better rest quality",
     "sleepBullet2": "Aligns wake-up time with lighter sleep phases to reduce morning grogginess and feel more energized"
   },
