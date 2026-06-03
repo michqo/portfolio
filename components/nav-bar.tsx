@@ -95,7 +95,6 @@ export function NavBar() {
                     <DropdownMenuItem key={href} asChild>
                       <a
                         href={href}
-                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 px-3 py-3 cursor-pointer"
                       >

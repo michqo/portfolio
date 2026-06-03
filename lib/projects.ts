@@ -1,4 +1,4 @@
-import { Cloud, Network, Moon, type LucideIcon } from "lucide-react";
+import { Cloud, Network, Moon, Utensils, type LucideIcon } from "lucide-react";
 
 export type Project = {
   name: string;
@@ -9,6 +9,7 @@ export type Project = {
 };
 
 export const PROJECTS = {
+  OBEDY: "Obedy",
   WEATHER: "Weather Station",
   SUBNIFY: "Subnify",
   SLEEP: "Sleep Cycle",
@@ -38,4 +39,11 @@ export const PROJECT_LIST: Project[] = [
     description: "Sleep schedule calculator",
     icon: Moon,
   },
+  {
+    name: PROJECTS.OBEDY,
+    href: "https://obedy.miqal.xyz",
+    github: "https://github.com/michqo/obedy",
+    description: "Menu obedov v okolí Niv",
+    icon: Utensils,
+  }
 ];
