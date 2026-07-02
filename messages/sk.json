@@ -9,7 +9,6 @@
   "hero": {
     "badge": "Pracujem v Resco",
     "role": "Full Stack Developer",
-    "subtitle": "Bratislava, Slovensko",
     "description": "Vyvíjam softvér v Resco — pracujem na React webovej vrstve zabudovanej v podnikových mobilných aplikáciách, dodávaných 160 000+ používateľom. Vo voľnom čase tvorím vlastné projekty: IoT systémy, webové nástroje a čokoľvek, čo považujem za hodné postaviť.",
     "viewProjects": "Zobraziť projekty",
     "downloadCV": "Stiahnuť životopis",
@@ -20,22 +19,14 @@
     "jobTitle": "Softvérový developer",
     "company": "Resco",
     "workType": "Hybridná práca",
-    "period": "Apr 2026 – Súčasnosť",
-    "companyBlurb": "Mobilný podnikový softvér bežiaci na Microsoft Power Apps a Dynamics 365, využívaný terénymi tímami naprieč odvetviami.",
-    "bullet1": "Vyvíjam funkcie pre Resco Power Solutions — podnikové aplikácie postavené na Microsoft Power Apps a Dynamics 365",
-    "bullet2": "Rozširujem Microsoft Power Platform o pokročilé mobilné možnosti: offline zber dát, generovanie dokumentov a no-code/low-code prispôsobenie",
-    "bullet3": "Pracujem v produktovom tíme na integrácii s Dataverse a Dynamics 365 backendom a prispievam do globálne distribuovanej komerčnej kódovej základne"
+    "period": "Apr 2026 – Súčasnosť"
   },
   "experience": {
     "sectionTitle": "Skúsenosti",
     "jobTitle": "Frontend / Backend Developer",
     "company": "Backbone",
     "workType": "Hybridná práca",
-    "period": "Máj 2023 – Okt 2024",
-    "bullet1": "Vyvíjal React funkcie pre dashboard správy reklám — dynamické filtrovanie, CRUD operácie a analytické prehľady — ako súčasť 2-členného frontend tímu",
-    "bullet2": "Vytvoril aplikáciu na správu grantov od základu pomocou React a vlastného Django API, čím zautomatizoval sledovanie a schvaľovanie žiadostí",
-    "bullet3": "Navrhol a implementoval škálovateľné Django REST endpointy s normalizovanými PostgreSQL schémami pre dátovo náročné interné nástroje",
-    "bullet4": "Integroval API tretích strán a zlepšil výkon UI, znížením zbytočných prerendrovania a zlepšením vnímanej odozvy"
+    "period": "Máj 2023 – Okt 2024"
   },
   "education": {
     "sectionTitle": "Vzdelanie a certifikácie",
@@ -43,7 +34,6 @@
     "schoolName": "Stredná odborná škola elektrotechnická, Zochova 9",
     "schoolDescription": "Inteligentné technológie · Absolvované s maturitnou skúškou",
     "schoolPeriod": "2021 – 2025",
-    "schoolLocation": "Bratislava, Slovensko",
     "certificationsLabel": "Certifikácie",
     "cert1Title": "Osvedčenie elektrotechnika (§ 21)",
     "cert1Issuer": "Slovenská technická norma",
@@ -59,29 +49,17 @@
     "subnifyTitle": "Subnify",
     "subnifyBadge": "MVP",
     "subnifySubtitle": "Siete · VLSM · Nástroj na plánovanie",
-    "sleepTitle": "Kalkulačka spánkových cyklov",
-    "sleepSubtitle": "Next.js · Produktivita · Zdravie",
     "liveDemo": "Živá ukážka",
     "viewSource": "Zobraziť zdrojový kód",
-    "weatherDescription": "Začalo to ako maturitný projekt a postupne z toho vyrástlo niečo väčšie — chcel som niečo, čo je skutočne moje, užitočné aj zaujímavé na tvorbu. Kompletný IoT systém od ESP32 hardvérových senzorov cez Django REST backend až po SvelteKit dashboard sledujúci reálne environmentálne dáta z viacerých staníc.",
-    "subnifyDescription": "Nenašiel som subnet kalkulačku, ktorá by mi vyhovovala, tak som si ju postavil. Začalo to ako jednoduchý VLSM plánovač a skončilo s vizualizátorom subnetov a AI asistovaným návrhom siete — a ďalší dobrý prírastok do môjho ekosystému aplikácií.",
-    "sleepDescription": "Malá utilita postavená na riešenie osobného problému — počíta ideálne časy zaspania a vstávania podľa 90-minútových spánkových cyklov, aby ste sa ráno naozaj cítili oddýchnutí.",
-    "weatherBullet1": "Vytvoril komplexný IoT systém od hardvéru ESP32 + DHT senzorov cez Django REST backend až po SvelteKit dashboard",
-    "weatherBullet2": "Zabezpečil API pomocou JWT autentifikácie a namodeloval logy senzorov v štruktúrovanej PostgreSQL schéme pre efektívne dopytovanie",
-    "weatherBullet3": "Implementoval serverové agregačné dotazy na spracovanie surových časových radov do historických trendov a analytiky",
-    "subnifyBullet1": "Navrhujte IPv4 subnet plány vo workflow zameranom na VLSM",
-    "subnifyBullet2": "Vizualizujte, ako jednotlivé subnety zapadajú do rodičovskej siete",
-    "subnifyBullet3": "Použite AI návrhára sietí (s pomocou modelu) na vygenerovanie prvého subnet plánu zo zámeru a obmedzení, ktorý potom viete manuálne upraviť",
-    "sleepBullet1": "Inteligentný výpočet podľa 90-minútových REM cyklov pomáha zvoliť vhodné časy spánku pre kvalitnejší oddych",
-    "sleepBullet2": "Načasuje budenie do ľahšej fázy spánku, aby ste sa vyhli rannej malátnosti a mali viac energie"
+    "weatherDescription": "Začalo to ako maturitný projekt a postupne z toho vyrástlo niečo väčšie — chcel som niečo, čo je skutočne moje, užitočné aj zaujímavé na vývoj. Kompletný IoT systém od ESP32 hardvérových senzorov cez Django REST backend až po SvelteKit dashboard sledujúci reálne environmentálne dáta z viacerých staníc.",
+    "subnifyDescription": "Nenašiel som subnet kalkulačku, ktorá by mi vyhovovala, tak som si ju nakódil. Začalo to ako jednoduchý VLSM plánovač a skončilo s vizualizátorom subnetov a AI asistovaným návrhom siete — a ďalší dobrý prírastok do môjho ekosystému aplikácií."
   },
   "skills": {
     "sectionTitle": "Zručnosti",
     "frontend": "Frontend",
     "backend": "Backend",
     "devops": "DevOps",
-    "tools": "Nástroje",
-    "technologies": "technológií"
+    "tools": "Nástroje"
   },
   "contact": {
     "sectionTitle": "Kontakt",
