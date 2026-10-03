@@ -32,8 +32,8 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL("https://miqal.xyz"),
-    title: "Miqal — Software Developer",
-    description: t("hero.description"),
+    title: "Michal Urban — miqal",
+    description: t("home.metaDescription"),
     keywords: [
       "software developer",
       "full-stack",
@@ -63,9 +63,9 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: "Miqal — Software Developer",
-      description: t("hero.description"),
-      url: "https://miqal.xyz",
+      title: "Michal Urban — miqal",
+      description: t("home.metaDescription"),
+      url: locale === routing.defaultLocale ? "https://miqal.xyz" : `https://miqal.xyz/${locale}`,
       siteName: "Miqal",
       locale: locale === "sk" ? "sk_SK" : "en_US",
       type: "website",
@@ -80,8 +80,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Miqal — Software Developer",
-      description: t("hero.description"),
+      title: "Michal Urban — miqal",
+      description: t("home.metaDescription"),
       images: ["/og-preview.png"],
     },
   };
@@ -105,6 +105,7 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages({ locale });
+  const t = await getTranslations({ locale });
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -119,19 +120,15 @@ export default async function LocaleLayout({
               enableSystem
               disableTransitionOnChange
             >
+              <a href="#main-content" className="fixed left-4 top-3 z-[100] -translate-y-24 rounded-md border border-border bg-background px-4 py-3 text-sm focus:translate-y-0">
+                {t("nav.skip")}
+              </a>
               <NavBar />
-              <main className="flex-1">{children}</main>
-              <footer className="border-t border-border/50 bg-background/70 backdrop-blur-md">
-                <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 font-mono text-xs text-muted-foreground sm:px-8">
-                  <span className="group flex items-center gap-1 font-bold tracking-tight">
-                    <span className="text-primary transition-colors group-hover:text-primary/70">
-                      /
-                    </span>
-                    <span className="transition-colors group-hover:text-primary">
-                      miqal
-                    </span>
-                  </span>
+              <main id="main-content" tabIndex={-1} className="flex-1 outline-none">{children}</main>
+              <footer className="border-t border-border">
+                <div className="mx-auto flex min-h-20 max-w-4xl flex-wrap items-center justify-between gap-x-4 gap-y-1 px-5 py-3 text-xs text-muted-foreground sm:px-8">
                   <FooterRights locale={locale} />
+                  <a href="https://github.com/michqo/portfolio" className="inline-flex min-h-11 items-center rounded-sm hover:text-foreground hover:underline hover:underline-offset-4">{t("footer.source")}</a>
                 </div>
               </footer>
             </ThemeProvider>

@@ -4,7 +4,12 @@
     "education": "Vzdelanie",
     "projects": "Projekty",
     "skills": "Zručnosti",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "apps": "Aplikácie",
+    "about": "O mne",
+    "home": "Domov miqal",
+    "label": "Hlavná navigácia",
+    "skip": "Preskočiť na obsah"
   },
   "hero": {
     "badge": "Pracujem v Resco",
@@ -40,7 +45,10 @@
     "cert2Title": "Cisco CCNA 3 — Podnikové siete, bezpečnosť a automatizácia",
     "cert2Issuer": "Cisco Networking Academy",
     "cert3Title": "Cisco CCNA 2 — Prepínanie, smerovanie a bezdrôtové siete",
-    "cert3Issuer": "Cisco Networking Academy"
+    "cert3Issuer": "Cisco Networking Academy",
+    "universityName": "FHI EUBA",
+    "universityDescription": "Aktuálne štúdium",
+    "universityPeriod": "Sep 2026 – Súčasnosť"
   },
   "projects": {
     "sectionTitle": "Projekty",
@@ -68,7 +76,8 @@
     "location": "Bratislava, Slovensko"
   },
   "footer": {
-    "rights": "všetky práva vyhradené"
+    "rights": "všetky práva vyhradené",
+    "source": "Kód stránky"
   },
   "localeSwitcher": {
     "label": "Jazyk",
@@ -83,5 +92,38 @@
     "otherProjects": "Iné projekty",
     "projects": "Projekty",
     "experience": "Skúsenosti"
+  },
+  "home": {
+    "location": "Softvérový vývojár · Bratislava, Slovensko",
+    "intro": "Pracujem ako full stack vývojár v Resco. Vo voľnom čase tvorím malé aplikácie a nástroje pre seba.",
+    "appsTitle": "Čo som vytvoril",
+    "appsIntro": "Niekoľko aplikácií a nástrojov. Niektoré praktické, iné zo zvedavosti.",
+    "source": "Kód",
+    "sourceFor": "Zdrojový kód aplikácie {name}",
+    "background": "Vzdelanie a nástroje",
+    "contact": "Máte otázku k aplikácii alebo sa len chcete ozvať?",
+    "metaDescription": "Michal Urban, softvérový vývojár z Bratislavy. Malá zbierka aplikácií a nástrojov: Weather Station, Subnify, Sleep Cycle a Obedy.",
+    "backgroundTitle": "Skúsenosti a vzdelanie",
+    "workDetail": "V Resco pracujem na React webovej vrstve podnikových mobilných aplikácií."
+  },
+  "apps": {
+    "weather": {
+      "description": "Merania a história z mojich meteorologických staníc s ESP32."
+    },
+    "subnify": {
+      "description": "Plánovač IPv4 podsietí s prideľovaním adries a vizuálnym prehľadom."
+    },
+    "sleep": {
+      "description": "Jednoduchá kalkulačka na odhad času zaspávania a vstávania."
+    },
+    "obedy": {
+      "description": "Obedové menu z reštaurácií v okolí Nív na jednom mieste."
+    }
+  },
+  "theme": {
+    "label": "Vybrať vzhľad",
+    "light": "Svetlý",
+    "dark": "Tmavý",
+    "system": "Podľa systému"
   }
 }

@@ -4,7 +4,12 @@
     "education": "Education",
     "projects": "Projects",
     "skills": "Skills",
-    "contact": "Contact"
+    "contact": "Contact",
+    "apps": "Apps",
+    "about": "About",
+    "home": "Miqal home",
+    "label": "Main navigation",
+    "skip": "Skip to content"
   },
   "hero": {
     "badge": "Working at Resco",
@@ -40,7 +45,10 @@
     "cert2Title": "Cisco CCNA 3 — Enterprise Networking, Security and Automation",
     "cert2Issuer": "Cisco Networking Academy",
     "cert3Title": "Cisco CCNA 2 — Switching, Routing and Wireless Essentials",
-    "cert3Issuer": "Cisco Networking Academy"
+    "cert3Issuer": "Cisco Networking Academy",
+    "universityName": "FHI EUBA",
+    "universityDescription": "Current studies",
+    "universityPeriod": "Sep 2026 – Present"
   },
   "projects": {
     "sectionTitle": "Projects",
@@ -68,7 +76,8 @@
     "location": "Bratislava, Slovakia"
   },
   "footer": {
-    "rights": "all rights reserved"
+    "rights": "all rights reserved",
+    "source": "Site source"
   },
   "localeSwitcher": {
     "label": "Language",
@@ -83,5 +92,38 @@
     "otherProjects": "Other projects",
     "projects": "Projects",
     "experience": "Experience"
+  },
+  "home": {
+    "location": "Software developer · Bratislava, Slovakia",
+    "intro": "I’m a full stack developer at Resco. In my free time, I build small apps and utilities for myself.",
+    "appsTitle": "Things I’ve made",
+    "appsIntro": "A few apps and utilities. Some practical, some made out of curiosity.",
+    "source": "Source",
+    "sourceFor": "Source code for {name}",
+    "background": "Education & tools",
+    "contact": "Have a question about an app, or just want to say hello?",
+    "metaDescription": "Michal Urban, software developer in Bratislava. A small collection of apps and utilities: Weather Station, Subnify, Sleep Cycle, and Obedy.",
+    "backgroundTitle": "Background",
+    "workDetail": "At Resco, I work on the React web layer of enterprise mobile apps."
+  },
+  "apps": {
+    "weather": {
+      "description": "Measurements and history from my own ESP32 weather stations."
+    },
+    "subnify": {
+      "description": "An IPv4 subnet planner with address allocation and a visual overview."
+    },
+    "sleep": {
+      "description": "A simple calculator for estimating bedtimes and wake-up times."
+    },
+    "obedy": {
+      "description": "Lunch menus from restaurants around Nivy, in one place."
+    }
+  },
+  "theme": {
+    "label": "Choose theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   }
 }

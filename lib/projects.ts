@@ -1,10 +1,10 @@
 import { Cloud, Network, Moon, Utensils, type LucideIcon } from "lucide-react";
 
 export type Project = {
+  id: "weather" | "subnify" | "sleep" | "obedy";
   name: string;
   href: string;
   github: string;
-  description: string;
   icon: LucideIcon;
 };
 
@@ -19,31 +19,31 @@ export type ProjectName = (typeof PROJECTS)[keyof typeof PROJECTS];
 
 export const PROJECT_LIST: Project[] = [
   {
+    id: "weather",
     name: PROJECTS.WEATHER,
     href: "https://ms.miqal.xyz",
     github: "https://github.com/michqo/ms_web",
-    description: "IoT monitoring dashboard",
     icon: Cloud,
   },
   {
+    id: "subnify",
     name: PROJECTS.SUBNIFY,
     href: "https://subnify.miqal.xyz",
     github: "https://github.com/michqo/subnify",
-    description: "IPv4 subnet planner",
     icon: Network,
   },
   {
+    id: "sleep",
     name: PROJECTS.SLEEP,
     href: "https://www.sleep.miqal.xyz",
     github: "https://github.com/michqo/sleep-cycle",
-    description: "Sleep schedule calculator",
     icon: Moon,
   },
   {
+    id: "obedy",
     name: PROJECTS.OBEDY,
     href: "https://obedy.miqal.xyz",
     github: "https://github.com/michqo/obedy",
-    description: "Menu obedov v okolí Niv",
     icon: Utensils,
   }
 ];
