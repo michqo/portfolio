@@ -1,3 +1,6 @@
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+
+minimumReleaseAgeExclude:
+  - "@miqal/theme@0.2.0"

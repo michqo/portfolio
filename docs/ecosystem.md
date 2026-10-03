@@ -1,20 +1,22 @@
-# Miqal ecosystem handoff
+# Miqal ecosystem
 
-The portfolio design approved on 2026-10-03 is the visual reference for the next
-shared-theme release. See [the portfolio design](design.md) for the local rules.
+The portfolio design approved on 2026-10-03 is the shared visual reference.
+See [the local design rules](design.md) and the completed
+[ecosystem rollout](../../miqal-theme/docs/ecosystem-rollout-2026-10-03.md).
 
-The package and app migration plan lives in
-[miqal-theme](../../miqal-theme/docs/ecosystem-rollout-2026-10-03.md), alongside
-an observed token snapshot from this portfolio. Work on the shared foundation
-there before replacing local styles in the apps.
+Portfolio, Sleep Cycle, Obedy, Weather Station, and Subnify all consume the
+exact published `@miqal/theme@0.2.0` release through `core.css`. The package
+owns warm light/dark surfaces, teal controls, Geist / Geist Mono roles,
+semantic colors, visible focus, and reduced-motion behavior. Apps load fonts
+and keep their own composition and domain behavior.
 
-Shared traits are the warm light/dark canvas, teal identity, Geist / Geist Mono
-roles, restrained icon colors, clear headings, compact spacing, visible focus,
-and quiet interactions. Product layouts remain task-specific: subnet planning,
-weather measurements, sleep calculations, and lunch menus need different
-structures and density.
+Portfolio's app-row alignment, Contact whitespace, typography, colors, and
+section geometry match the approved reference across EN/SK, light/dark, and
+desktop/mobile. Its sketch, app-icon tints, and personal content remain local.
 
-The portfolio currently uses local CSS. Its first migration to the package must
-preserve the approved appearance, including the app-row action alignment and
-the contact section's whitespace separation. The app sketch and personal
-content stay here; the package owns reusable foundations.
+The utilities retain task-specific layouts: dense subnet planning, weather
+measurements and charts, a small sleep calculator, and readable lunch menus.
+They share quiet identity and controls without promotional project cards.
+
+The [verification record](../../miqal-theme/docs/verification-0.2.0.md) documents
+checks and backend configuration limits. App deployment remains separate.

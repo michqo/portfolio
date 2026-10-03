@@ -39,14 +39,15 @@ feature claims, fake activity, and decorative status indicators.
 
 ## Relationship to the shared theme
 
-The cloned `miqal-theme` repository currently implements 0.1.1. Its older 0.2
-plan predates this approved design. The [ecosystem handoff](ecosystem.md) points
-to the revised rollout plan and token reference in the package repository.
-The portfolio retains its local tokens and existing Geist / Geist Mono fonts
-until a validated package migration preserves this appearance.
+The `miqal-theme` repository publishes the verified 0.2.0 foundation from
+this approved design. The [ecosystem handoff](ecosystem.md) points to its rollout
+and verification records. Portfolio imports core.css and binds the existing
+Geist / Geist Mono loader variables on body, where next/font defines them.
+Only its local composition, app tints, and sketch rules remain here.
 
-The light primary and ring are locally calibrated to `oklch(0.43 0.12 212)` and
-secondary text to `oklch(0.48 0.014 65)` against a warm off-white canvas. Dark
-mode uses warm charcoal and independently calibrated text and icon colors.
-The teal identity is retained. These local values
-should be reconciled with the canonical package during its future migration.
+The shared light primary and ring use `oklch(0.43 0.12 212)` and secondary text
+uses `oklch(0.48 0.014 65)` against warm paper. Dark mode retains the approved
+warm charcoal and independently calibrated text and icon colors. Computed
+layout, typography, and colors match the reference across EN/SK, light/dark,
+and desktop/mobile. Portfolio pins the exact published `@miqal/theme@0.2.0`
+registry release; its lockfile records the verified package integrity.
