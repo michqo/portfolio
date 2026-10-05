@@ -15,7 +15,7 @@ section geometry match the approved reference across EN/SK, light/dark, and
 desktop/mobile. Its sketch, app-icon tints, and personal content remain local.
 
 The utilities retain task-specific layouts: dense subnet planning, weather
-measurements and charts, a small sleep calculator, and readable lunch menus.
+measurements and charts, a small sleep cycle calculator, and readable lunch menus.
 They share quiet identity and controls without promotional project cards.
 
 The [verification record](../../miqal-theme/docs/verification-0.2.0.md) documents

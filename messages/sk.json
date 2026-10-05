@@ -104,7 +104,11 @@
     "contact": "Máte otázku k aplikácii alebo sa len chcete ozvať?",
     "metaDescription": "Michal Urban, softvérový vývojár z Bratislavy. Malá zbierka aplikácií a nástrojov: Weather Station, Subnify, Sleep Cycle a Obedy.",
     "backgroundTitle": "Skúsenosti a vzdelanie",
-    "workDetail": "V Resco pracujem na React webovej vrstve podnikových mobilných aplikácií."
+    "workDetail": "V Resco pracujem na React webovej vrstve podnikových mobilných aplikácií.",
+    "preview": "Pozrieť snímku",
+    "previewFor": "Pozrieť snímku aplikácie {name}",
+    "fullSize": "Otvoriť v plnej veľkosti",
+    "fullSizeFor": "Otvoriť snímku aplikácie {name} v plnej veľkosti na novej karte"
   },
   "apps": {
     "weather": {
@@ -114,7 +118,10 @@
       "description": "Plánovač IPv4 podsietí s prideľovaním adries a vizuálnym prehľadom."
     },
     "sleep": {
-      "description": "Jednoduchá kalkulačka na odhad času zaspávania a vstávania."
+      "description": "Jednoduchá kalkulačka na odhad času zaspávania a vstávania.",
+      "story": "Vyberte čas a vypočítajte možnosti podľa spánkových cyklov s nastaviteľným časom na zaspanie.",
+      "screenshotAlt": "Sleep Cycle s časom vstávania o 07:00 a tromi vypočítanými možnosťami zaspávania.",
+      "screenshotCaption": "Odhad času zaspávania pri vstávaní o 07:00 s 15 minútami na zaspanie."
     },
     "obedy": {
       "description": "Obedové menu z reštaurácií v okolí Nív na jednom mieste."

@@ -13,6 +13,8 @@ feature claims, fake activity, and decorative status indicators.
   history after the app directory.
 - The app registry in `lib/projects.ts` supplies stable IDs, names, URLs, source
   links, and icons. Descriptions use matching keys in both locale message files.
+- Sleep Cycle includes a factual description of its sleep calculator and local
+  preferences, with an example night in its screenshot disclosure.
 - Professional history and the CV remain visible. A native disclosure holds the
   longer tool list and education information.
 - `/miqal` identifies the hub. Apps keep their own task-specific interfaces.

@@ -104,7 +104,11 @@
     "contact": "Have a question about an app, or just want to say hello?",
     "metaDescription": "Michal Urban, software developer in Bratislava. A small collection of apps and utilities: Weather Station, Subnify, Sleep Cycle, and Obedy.",
     "backgroundTitle": "Background",
-    "workDetail": "At Resco, I work on the React web layer of enterprise mobile apps."
+    "workDetail": "At Resco, I work on the React web layer of enterprise mobile apps.",
+    "preview": "View screenshot",
+    "previewFor": "View screenshot of {name}",
+    "fullSize": "Open full size",
+    "fullSizeFor": "Open full-size screenshot of {name} in a new tab"
   },
   "apps": {
     "weather": {
@@ -114,7 +118,10 @@
       "description": "An IPv4 subnet planner with address allocation and a visual overview."
     },
     "sleep": {
-      "description": "A simple calculator for estimating bedtimes and wake-up times."
+      "description": "A simple calculator for estimating bedtimes and wake-up times.",
+      "story": "Choose a time and calculate sleep-cycle options, with an adjustable estimate for falling asleep.",
+      "screenshotAlt": "Sleep Cycle showing a 07:00 wake-up time and three calculated bedtime options.",
+      "screenshotCaption": "Bedtime estimates for a 07:00 wake-up time, allowing 15 minutes to fall asleep."
     },
     "obedy": {
       "description": "Lunch menus from restaurants around Nivy, in one place."

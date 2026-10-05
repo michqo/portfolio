@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUpRight, ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import { CVDownloadLink } from "@/components/cv-download-link";
 import { AppSketch } from "@/components/app-sketch";
 import { PROJECT_LIST } from "@/lib/projects";
@@ -32,18 +33,35 @@ export default async function Page({ params }: { params: Promise<{ locale: "en" 
         </div>
         <p className="mb-6 text-sm leading-6 text-muted-foreground">{t("home.appsIntro")}</p>
         <ul className="app-directory border-t border-border">
-          {PROJECT_LIST.map(({ id, name, href, github, icon: Icon }) => (
+          {PROJECT_LIST.map(({ id, name, href, github, icon: Icon, screenshot }) => (
             <li key={id} className={`app-${id} group/app grid grid-cols-[36px_minmax(0,1fr)_64px] items-center gap-x-3 border-b border-border px-3 py-4 sm:grid-cols-[40px_minmax(0,1fr)_64px] sm:gap-x-4 sm:px-4`}>
               <a href={href} className="group/link col-span-3 grid min-h-11 grid-cols-[36px_minmax(0,1fr)_64px] items-start gap-x-3 gap-y-1 rounded-sm sm:grid-cols-[40px_minmax(0,1fr)_64px] sm:gap-x-4">
                 <span className="app-icon row-span-2 mt-0.5 flex size-9 items-center justify-center rounded-xl sm:size-10"><Icon aria-hidden="true" className="size-5" /></span>
                 <h3 className="min-w-0 text-base font-medium transition-colors group-hover/link:text-primary">{name}</h3>
                 <ArrowUpRight aria-hidden="true" className="mt-1 size-4 justify-self-center text-muted-foreground transition-colors group-hover/link:text-primary" />
                 <p className="col-span-2 col-start-2 text-sm leading-6 text-muted-foreground">{t(`apps.${id}.description`)}</p>
+                {screenshot && <p className="col-span-2 col-start-2 mt-1 text-sm leading-6">{t(`apps.${id}.story`)}</p>}
               </a>
               <span className="col-start-2 row-start-2 min-w-0 break-words font-mono text-xs leading-5 text-muted-foreground">{new URL(href).hostname.replace(/^www\./, "")}</span>
               <a href={github} aria-label={t("home.sourceFor", { name })} className="col-start-3 row-start-2 inline-flex min-h-11 items-center justify-center gap-1.5 rounded-sm text-xs text-muted-foreground hover:text-foreground hover:underline hover:underline-offset-4">
                 <Github aria-hidden="true" className="size-4" />{t("home.source")}
               </a>
+              {screenshot && (
+                <details className="group/preview col-span-2 col-start-2 row-start-3 min-w-0">
+                  <summary aria-label={t("home.previewFor", { name })} className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-sm text-xs text-muted-foreground hover:text-foreground [&::-webkit-details-marker]:hidden">
+                    {t("home.preview")}<ChevronDown aria-hidden="true" className="size-3.5 transition-transform group-open/preview:rotate-180" />
+                  </summary>
+                  <figure className="mt-1">
+                    <Image src={screenshot} alt={t(`apps.${id}.screenshotAlt`)} sizes="(min-width: 896px) 744px, (min-width: 640px) calc(100vw - 152px), calc(100vw - 112px)" className="h-auto w-full rounded-lg border border-border" />
+                    <figcaption className="flex flex-wrap items-center justify-between gap-x-4 text-xs leading-5 text-muted-foreground">
+                      <span>{t(`apps.${id}.screenshotCaption`)}</span>
+                      <a href={screenshot.src} target="_blank" rel="noreferrer" aria-label={t("home.fullSizeFor", { name })} className="inline-flex min-h-11 items-center gap-1 rounded-sm hover:text-foreground hover:underline hover:underline-offset-4">
+                        {t("home.fullSize")}<ArrowUpRight aria-hidden="true" className="size-3.5" />
+                      </a>
+                    </figcaption>
+                  </figure>
+                </details>
+              )}
             </li>
           ))}
         </ul>

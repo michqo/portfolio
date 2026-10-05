@@ -1,4 +1,6 @@
 import { Cloud, Network, Moon, Utensils, type LucideIcon } from "lucide-react";
+import type { StaticImageData } from "next/image";
+import sleepPreview from "@/public/projects/sleep/planner-preview.png";
 
 export type Project = {
   id: "weather" | "subnify" | "sleep" | "obedy";
@@ -6,6 +8,7 @@ export type Project = {
   href: string;
   github: string;
   icon: LucideIcon;
+  screenshot?: StaticImageData;
 };
 
 export const PROJECTS = {
@@ -38,6 +41,7 @@ export const PROJECT_LIST: Project[] = [
     href: "https://www.sleep.miqal.xyz",
     github: "https://github.com/michqo/sleep-cycle",
     icon: Moon,
+    screenshot: sleepPreview,
   },
   {
     id: "obedy",
