@@ -1,6 +1,9 @@
 import { Cloud, Network, Moon, Utensils, type LucideIcon } from "lucide-react";
 import type { StaticImageData } from "next/image";
+import weatherPreview from "@/public/projects/weather/measurements-preview.png";
+import subnifyPreview from "@/public/projects/subnify/planner-preview.png";
 import sleepPreview from "@/public/projects/sleep/planner-preview.png";
+import obedyPreview from "@/public/projects/obedy/menus-preview.jpg";
 
 export type Project = {
   id: "weather" | "subnify" | "sleep" | "obedy";
@@ -27,6 +30,7 @@ export const PROJECT_LIST: Project[] = [
     href: "https://ms.miqal.xyz",
     github: "https://github.com/michqo/ms_web",
     icon: Cloud,
+    screenshot: weatherPreview,
   },
   {
     id: "subnify",
@@ -34,6 +38,7 @@ export const PROJECT_LIST: Project[] = [
     href: "https://subnify.miqal.xyz",
     github: "https://github.com/michqo/subnify",
     icon: Network,
+    screenshot: subnifyPreview,
   },
   {
     id: "sleep",
@@ -49,5 +54,6 @@ export const PROJECT_LIST: Project[] = [
     href: "https://obedy.miqal.xyz",
     github: "https://github.com/michqo/obedy",
     icon: Utensils,
+    screenshot: obedyPreview,
   }
 ];

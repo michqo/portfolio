@@ -13,18 +13,20 @@ export default async function Page({ params }: { params: Promise<{ locale: "en" 
 
   return (
     <div className="mx-auto w-full max-w-4xl px-5 pb-14 pt-12 sm:px-8 sm:pb-16 sm:pt-16">
-      <section id="about" aria-labelledby="intro-title" className="grid scroll-mt-16 items-center gap-8 md:grid-cols-[1fr_200px]">
+      <section id="about" aria-labelledby="intro-title" className="relative grid scroll-mt-16 items-center gap-8 md:grid-cols-[1fr_200px]">
         <div>
           <p className="mb-4 font-mono text-xs text-muted-foreground">{t("home.location")}</p>
           <h1 id="intro-title" className="intro-name text-[2.5rem] font-semibold leading-[1.08] tracking-[-0.055em] sm:text-6xl lg:text-[4.25rem]">
             Michal Urban<span className="text-primary">.</span>
           </h1>
           <p className="mt-5 max-w-lg text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">{t("home.intro")}</p>
-          <a href="#apps" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary hover:underline hover:underline-offset-4">
-            {t("nav.apps")}<ArrowDown aria-hidden="true" className="size-3.5" />
-          </a>
+          <div className="mt-3 flex min-h-28 items-center pr-32 md:mt-5 md:min-h-0 md:pr-0">
+            <a href="#apps" className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary hover:underline hover:underline-offset-4">
+              {t("nav.apps")}<ArrowDown aria-hidden="true" className="size-3.5 shrink-0" />
+            </a>
+          </div>
         </div>
-        <div className="hidden md:block"><AppSketch /></div>
+        <div className="pointer-events-none absolute bottom-0 right-0 w-28 md:static md:w-auto"><AppSketch /></div>
       </section>
 
       <section id="apps" aria-labelledby="apps-title" className="mt-12 sm:mt-14">
@@ -34,34 +36,40 @@ export default async function Page({ params }: { params: Promise<{ locale: "en" 
         <p className="mb-6 text-sm leading-6 text-muted-foreground">{t("home.appsIntro")}</p>
         <ul className="app-directory border-t border-border">
           {PROJECT_LIST.map(({ id, name, href, github, icon: Icon, screenshot }) => (
-            <li key={id} className={`app-${id} group/app grid grid-cols-[36px_minmax(0,1fr)_64px] items-center gap-x-3 border-b border-border px-3 py-4 sm:grid-cols-[40px_minmax(0,1fr)_64px] sm:gap-x-4 sm:px-4`}>
-              <a href={href} className="group/link col-span-3 grid min-h-11 grid-cols-[36px_minmax(0,1fr)_64px] items-start gap-x-3 gap-y-1 rounded-sm sm:grid-cols-[40px_minmax(0,1fr)_64px] sm:gap-x-4">
-                <span className="app-icon row-span-2 mt-0.5 flex size-9 items-center justify-center rounded-xl sm:size-10"><Icon aria-hidden="true" className="size-5" /></span>
-                <h3 className="min-w-0 text-base font-medium transition-colors group-hover/link:text-primary">{name}</h3>
-                <ArrowUpRight aria-hidden="true" className="mt-1 size-4 justify-self-center text-muted-foreground transition-colors group-hover/link:text-primary" />
-                <p className="col-span-2 col-start-2 text-sm leading-6 text-muted-foreground">{t(`apps.${id}.description`)}</p>
-                {screenshot && <p className="col-span-2 col-start-2 mt-1 text-sm leading-6">{t(`apps.${id}.story`)}</p>}
-              </a>
-              <span className="col-start-2 row-start-2 min-w-0 break-words font-mono text-xs leading-5 text-muted-foreground">{new URL(href).hostname.replace(/^www\./, "")}</span>
-              <a href={github} aria-label={t("home.sourceFor", { name })} className="col-start-3 row-start-2 inline-flex min-h-11 items-center justify-center gap-1.5 rounded-sm text-xs text-muted-foreground hover:text-foreground hover:underline hover:underline-offset-4">
-                <Github aria-hidden="true" className="size-4" />{t("home.source")}
-              </a>
-              {screenshot && (
-                <details className="group/preview col-span-2 col-start-2 row-start-3 min-w-0">
-                  <summary aria-label={t("home.previewFor", { name })} className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-sm text-xs text-muted-foreground hover:text-foreground [&::-webkit-details-marker]:hidden">
-                    {t("home.preview")}<ChevronDown aria-hidden="true" className="size-3.5 transition-transform group-open/preview:rotate-180" />
-                  </summary>
-                  <figure className="mt-1">
-                    <Image src={screenshot} alt={t(`apps.${id}.screenshotAlt`)} sizes="(min-width: 896px) 744px, (min-width: 640px) calc(100vw - 152px), calc(100vw - 112px)" className="h-auto w-full rounded-lg border border-border" />
-                    <figcaption className="flex flex-wrap items-center justify-between gap-x-4 text-xs leading-5 text-muted-foreground">
-                      <span>{t(`apps.${id}.screenshotCaption`)}</span>
-                      <a href={screenshot.src} target="_blank" rel="noreferrer" aria-label={t("home.fullSizeFor", { name })} className="inline-flex min-h-11 items-center gap-1 rounded-sm hover:text-foreground hover:underline hover:underline-offset-4">
-                        {t("home.fullSize")}<ArrowUpRight aria-hidden="true" className="size-3.5" />
-                      </a>
-                    </figcaption>
-                  </figure>
-                </details>
-              )}
+            <li key={id} className={`app-${id} group/app grid grid-cols-[36px_minmax(0,1fr)] items-start gap-x-3 border-b border-border px-3 py-4 sm:grid-cols-[40px_minmax(0,1fr)] sm:gap-x-4 sm:px-4`}>
+              <span className="app-icon mt-0.5 flex size-9 items-center justify-center rounded-xl sm:size-10"><Icon aria-hidden="true" className="size-5" /></span>
+              <div className="min-w-0">
+                <h3 className="text-base font-medium">{name}</h3>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">{t(`apps.${id}.description`)}</p>
+                {screenshot && <p className="mt-2 text-sm leading-6">{t(`apps.${id}.story`)}</p>}
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                  <span className="w-full min-w-0 break-words font-mono text-xs leading-5 text-muted-foreground sm:w-auto">{new URL(href).hostname.replace(/^www\./, "")}</span>
+                  <div data-app-actions className="flex items-center gap-2">
+                    <a href={href} aria-label={t("home.openFor", { name })} className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-md border border-border px-3 text-xs font-medium text-primary transition-colors hover:bg-accent">
+                      {t("home.open")}<ArrowUpRight aria-hidden="true" className="size-3.5 shrink-0" />
+                    </a>
+                    <a href={github} aria-label={t("home.sourceFor", { name })} className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-md border border-border px-3 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+                      <Github aria-hidden="true" className="size-3.5 shrink-0" />{t("home.source")}
+                    </a>
+                  </div>
+                </div>
+                {screenshot && (
+                  <details className="group/preview mt-1 min-w-0">
+                    <summary aria-label={t("home.previewFor", { name })} className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-sm text-xs text-muted-foreground hover:text-foreground [&::-webkit-details-marker]:hidden">
+                      {t("home.preview")}<ChevronDown aria-hidden="true" className="size-3.5 transition-transform group-open/preview:rotate-180" />
+                    </summary>
+                    <figure className="mt-1">
+                      <Image src={screenshot} alt={t(`apps.${id}.screenshotAlt`)} sizes="(min-width: 896px) 744px, (min-width: 640px) calc(100vw - 152px), calc(100vw - 112px)" className="h-auto w-full rounded-lg border border-border" />
+                      <figcaption className="mt-2 grid gap-1 text-xs leading-5 text-muted-foreground sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-4">
+                        <span className="self-center">{t(`apps.${id}.screenshotCaption`)}</span>
+                        <a href={screenshot.src} target="_blank" rel="noreferrer" aria-label={t("home.fullSizeFor", { name })} className="inline-flex min-h-11 items-center gap-1 justify-self-start rounded-sm hover:text-foreground hover:underline hover:underline-offset-4 sm:justify-self-end">
+                          {t("home.fullSize")}<ArrowUpRight aria-hidden="true" className="size-3.5 shrink-0" />
+                        </a>
+                      </figcaption>
+                    </figure>
+                  </details>
+                )}
+              </div>
             </li>
           ))}
         </ul>

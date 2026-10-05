@@ -100,22 +100,30 @@
     "appsIntro": "A few apps and utilities. Some practical, some made out of curiosity.",
     "source": "Source",
     "sourceFor": "Source code for {name}",
+    "preview": "View screenshot",
+    "previewFor": "View screenshot of {name}",
+    "fullSize": "Open full size",
+    "fullSizeFor": "Open full-size screenshot of {name} in a new tab",
     "background": "Education & tools",
     "contact": "Have a question about an app, or just want to say hello?",
     "metaDescription": "Michal Urban, software developer in Bratislava. A small collection of apps and utilities: Weather Station, Subnify, Sleep Cycle, and Obedy.",
     "backgroundTitle": "Background",
     "workDetail": "At Resco, I work on the React web layer of enterprise mobile apps.",
-    "preview": "View screenshot",
-    "previewFor": "View screenshot of {name}",
-    "fullSize": "Open full size",
-    "fullSizeFor": "Open full-size screenshot of {name} in a new tab"
+    "open": "Open",
+    "openFor": "Open {name}"
   },
   "apps": {
     "weather": {
-      "description": "Measurements and history from my own ESP32 weather stations."
+      "description": "Measurements and history from my own ESP32 weather stations.",
+      "story": "It started as my maturita project, and I kept building it for my own stations.",
+      "screenshotAlt": "Weather Station measurements showing daily temperature and humidity readings.",
+      "screenshotCaption": "Station measurements with sample data."
     },
     "subnify": {
-      "description": "An IPv4 subnet planner with address allocation and a visual overview."
+      "description": "An IPv4 subnet planner with address allocation and a visual overview.",
+      "story": "I built it because I couldn’t find a subnet calculator I liked using.",
+      "screenshotAlt": "Subnify showing an IPv4 plan with three subnet requirements and the calculated address allocations.",
+      "screenshotCaption": "An example IPv4 plan and its allocations."
     },
     "sleep": {
       "description": "A simple calculator for estimating bedtimes and wake-up times.",
@@ -124,7 +132,10 @@
       "screenshotCaption": "Bedtime estimates for a 07:00 wake-up time, allowing 15 minutes to fall asleep."
     },
     "obedy": {
-      "description": "Lunch menus from restaurants around Nivy, in one place."
+      "description": "Compare daily lunches from Komín, Nostalgia and Dulak near Nivy.",
+      "story": "Choose a day, search dishes and keep favourites, with clear prices and source links.",
+      "screenshotAlt": "Obedy showing a selected day, lunch filters and Nostalgia’s published menu with prices.",
+      "screenshotCaption": "A dated lunch menu from the three-restaurant shortlist."
     }
   },
   "theme": {

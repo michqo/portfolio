@@ -100,22 +100,30 @@
     "appsIntro": "Niekoľko aplikácií a nástrojov. Niektoré praktické, iné zo zvedavosti.",
     "source": "Kód",
     "sourceFor": "Zdrojový kód aplikácie {name}",
+    "preview": "Pozrieť snímku",
+    "previewFor": "Pozrieť snímku aplikácie {name}",
+    "fullSize": "Otvoriť v plnej veľkosti",
+    "fullSizeFor": "Otvoriť snímku aplikácie {name} v plnej veľkosti na novej karte",
     "background": "Vzdelanie a nástroje",
     "contact": "Máte otázku k aplikácii alebo sa len chcete ozvať?",
     "metaDescription": "Michal Urban, softvérový vývojár z Bratislavy. Malá zbierka aplikácií a nástrojov: Weather Station, Subnify, Sleep Cycle a Obedy.",
     "backgroundTitle": "Skúsenosti a vzdelanie",
     "workDetail": "V Resco pracujem na React webovej vrstve podnikových mobilných aplikácií.",
-    "preview": "Pozrieť snímku",
-    "previewFor": "Pozrieť snímku aplikácie {name}",
-    "fullSize": "Otvoriť v plnej veľkosti",
-    "fullSizeFor": "Otvoriť snímku aplikácie {name} v plnej veľkosti na novej karte"
+    "open": "Otvoriť",
+    "openFor": "Otvoriť aplikáciu {name}"
   },
   "apps": {
     "weather": {
-      "description": "Merania a história z mojich meteorologických staníc s ESP32."
+      "description": "Merania a história z mojich meteorologických staníc s ESP32.",
+      "story": "Začalo to ako môj maturitný projekt a ďalej som ho rozvíjal pre vlastné stanice.",
+      "screenshotAlt": "Merania z Weather Station s dennými hodnotami teploty a vlhkosti.",
+      "screenshotCaption": "Merania stanice s ukážkovými údajmi."
     },
     "subnify": {
-      "description": "Plánovač IPv4 podsietí s prideľovaním adries a vizuálnym prehľadom."
+      "description": "Plánovač IPv4 podsietí s prideľovaním adries a vizuálnym prehľadom.",
+      "story": "Vytvoril som ho, pretože som nenašiel kalkulačku podsietí, ktorú by som rád používal.",
+      "screenshotAlt": "Subnify s IPv4 plánom, tromi požiadavkami na podsiete a vypočítaným pridelením adries.",
+      "screenshotCaption": "Ukážka IPv4 plánu a pridelených adries."
     },
     "sleep": {
       "description": "Jednoduchá kalkulačka na odhad času zaspávania a vstávania.",
@@ -124,7 +132,10 @@
       "screenshotCaption": "Odhad času zaspávania pri vstávaní o 07:00 s 15 minútami na zaspanie."
     },
     "obedy": {
-      "description": "Obedové menu z reštaurácií v okolí Nív na jednom mieste."
+      "description": "Porovnanie denných obedov z Komína, Nostalgie a Dulaku pri Nivách.",
+      "story": "Výber dňa, hľadanie jedál a obľúbené miesta s jasnými cenami a odkazmi na zdroje.",
+      "screenshotAlt": "Obedy s vybraným dňom, filtrami a zverejneným menu Nostalgie s cenami.",
+      "screenshotCaption": "Menu na konkrétny deň z okruhu troch reštaurácií."
     }
   },
   "theme": {
