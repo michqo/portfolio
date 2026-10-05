@@ -93,6 +93,9 @@
     "projects": "Projekty",
     "experience": "Skúsenosti"
   },
+  "og": {
+    "description": "Malé aplikácie a nástroje, ktoré tvorím pre seba."
+  },
   "home": {
     "location": "Softvérový vývojár · Bratislava, Slovensko",
     "intro": "Pracujem ako full stack vývojár v Resco. Vo voľnom čase tvorím malé aplikácie a nástroje pre seba.",

@@ -47,6 +47,14 @@ feature claims, fake activity, and decorative status indicators.
 
 ## Relationship to the shared theme
 
+Social previews use the same warm paper, Geist typography, and ecosystem sketch
+as the homepage. Next.js generates localized 1200 × 630 Open Graph and Twitter
+images from `og/social-card.tsx` at build time. Their colors come from the shared
+theme tokens, and their short description comes from the locale message files.
+The image generator reads the package's generated sRGB export without a local
+color conversion dependency; website CSS retains the canonical OKLCH colors.
+See [the generation notes](../og/README.md) for preview paths and font assets.
+
 The `miqal-theme` repository publishes the verified 0.2.0 foundation from
 this approved design. The [ecosystem handoff](ecosystem.md) points to its rollout
 and verification records. Portfolio imports core.css and binds the existing
@@ -59,5 +67,5 @@ warm charcoal and independently calibrated text and icon colors. Computed
 layout, typography, and colors were checked against the reference during the
 theme integration across EN/SK, light/dark, and desktop/mobile. The subsequent
 content additions retain that foundation. Portfolio pins the exact published
-`@miqal/theme@0.2.0` registry release; its lockfile records the verified package
+`@miqal/theme@0.2.1` registry release; its lockfile records the verified package
 integrity.

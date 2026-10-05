@@ -3,4 +3,4 @@ ignoredBuiltDependencies:
   - unrs-resolver
 
 minimumReleaseAgeExclude:
-  - "@miqal/theme@0.2.0"
+  - "@miqal/theme@0.2.1"

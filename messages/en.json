@@ -93,6 +93,9 @@
     "projects": "Projects",
     "experience": "Experience"
   },
+  "og": {
+    "description": "Small apps and utilities, made for myself."
+  },
   "home": {
     "location": "Software developer · Bratislava, Slovakia",
     "intro": "I’m a full stack developer at Resco. In my free time, I build small apps and utilities for myself.",
